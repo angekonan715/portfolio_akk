@@ -1,0 +1,195 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Data Visualization - Ange K. Kouadio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <style>
+        /* Professional styling for project cards */
+        .box.style2 a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .box.style2 a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .box.style2 a::after {
+            content: "Click to learn more";
+            display: block;
+            text-align: center;
+            color: #e87a90;
+            font-size: 0.9em;
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .box.style2 a:hover::after {
+            opacity: 1;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            h2 {
+                font-size: 1.8em;
+            }
+
+            .button {
+                padding: 12px 24px;
+                font-size: 0.9em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .button {
+                padding: 10px 20px;
+                font-size: 0.8em;
+            }
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="container">
+            <li><a href="../mywork.html">← Back to My Work</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <article id="top" class="wrapper style1">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 col-5-large col-12-medium">
+                    <span class="image fit"><img src="../images/pic00.jpg" alt="" /></span>
+                </div>
+                <div class="col-8 col-7-large col-12-medium">
+                    <header>
+                        <h1>Data Visualization</h1>
+                    </header>
+                    <p>Interactive dashboards and compelling visual stories. Explore my work in Tableau, PowerBI, Looker
+                        Studio, and R visualizations.</p>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Data Visualization Projects -->
+    <article id="data-visualization-projects" class="wrapper style2">
+        <div class="container">
+            <header>
+                <h2>Data Visualization Projects</h2>
+                <p>Click on any project to view detailed information</p>
+            </header>
+            <div class="row">
+                <div class="col-6 col-12-medium">
+                    <section class="box style2">
+                        <a href="../project-details.html" target="_blank">
+                            <span class="icon featured fa-chart-pie"></span>
+                            <h3>Tableau Dashboard Project</h3>
+                            <p><strong>Technology:</strong> Tableau, Data Visualization<br>
+                                <strong>Dashboards:</strong> 5 interactive views<br>
+                                <strong>Users:</strong> 500+ stakeholders<br>
+                                <strong>Impact:</strong> 40% faster insights
+                            </p>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <section class="box style2">
+                        <a href="../project-details.html" target="_blank">
+                            <span class="icon solid featured fa-chart-bar"></span>
+                            <h3>PowerBI Reports</h3>
+                            <p><strong>Technology:</strong> PowerBI, DAX, M Query<br>
+                                <strong>Reports:</strong> 10+ interactive reports<br>
+                                <strong>Data Sources:</strong> Multiple databases<br>
+                                <strong>Automation:</strong> Daily refresh
+                            </p>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <section class="box style2">
+                        <a href="../project-details.html" target="_blank">
+                            <span class="icon featured fa-chart-line"></span>
+                            <h3>Looker Studio Projects</h3>
+                            <p><strong>Technology:</strong> Looker Studio, BigQuery<br>
+                                <strong>Visualizations:</strong> 15+ charts<br>
+                                <strong>Real-time:</strong> Live data connection<br>
+                                <strong>Collaboration:</strong> Team sharing
+                            </p>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <section class="box style2">
+                        <a href="../project-details.html" target="_blank">
+                            <span class="icon solid featured fa-chart-area"></span>
+                            <h3>R Visualization Projects</h3>
+                            <p><strong>Technology:</strong> R, ggplot2, Plotly<br>
+                                <strong>Charts:</strong> 20+ custom visualizations<br>
+                                <strong>Interactivity:</strong> Shiny apps<br>
+                                <strong>Publication:</strong> Research ready
+                            </p>
+                        </a>
+                    </section>
+                </div>
+            </div>
+            <footer>
+                <a href="../mywork.html" class="button large scrolly">← Back to Categories</a>
+            </footer>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <article id="footer" class="wrapper style4">
+        <div class="container medium">
+            <header>
+                <h2>Thank you for exploring my Data Visualization work!</h2>
+                <p>I'm always open to new opportunities and collaborations.</p>
+            </header>
+            <div class="row">
+                <div class="col-12">
+                    <a href="../index.html" class="button large">← Back to Main Page</a>
+                </div>
+            </div>
+            <footer>
+                <ul id="copyright">
+                    <li>&copy; Ange K. Kouadio. All rights reserved.</li>
+                    <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+                </ul>
+            </footer>
+        </div>
+    </article>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
