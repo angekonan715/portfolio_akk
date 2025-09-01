@@ -1653,10 +1653,25 @@ input, select, textarea {
 			margin: 0 0 2em 0;
 		}
 
-			.image.centered img {
-				margin: 0 auto;
-				width: auto;
-			}
+					.image.centered img {
+			margin: 0 auto;
+			width: auto;
+		}
+
+		/* Profile image styling */
+		#top .image.fit img {
+			width: 100%;
+			height: auto;
+			max-width: 320px;
+			aspect-ratio: 1/1;
+			object-fit: cover;
+			object-position: center 30%;
+			border-radius: 50%;
+			box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+			display: block;
+			margin: 0 auto;
+			border: 3px solid #fff;
+		}
 
 /* Button */
 
@@ -1686,7 +1701,7 @@ input, select, textarea {
 		text-shadow: -1px -1px 0.5px rgba(0, 0, 0, 0.5);
 		overflow: hidden;
 		box-shadow: inset 0px 0px 0px 1px rgba(0, 0, 0, 0.5), inset 0px 2px 1px 0px rgba(255, 255, 255, 0.75);
-		background-color: #43B3E0;
+		background-color: #2E86AB;
 		padding: 1em 2.35em 1em 2.35em;
 		font-size: 1.1em;
 		max-width: 24em;
@@ -1697,7 +1712,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #43bff0;
+			background-color: #1E5F8A;
 			color: #fff !important;
 		}
 
@@ -1706,7 +1721,7 @@ input, select, textarea {
 		input[type="reset"]:active,
 		button:active,
 		.button:active {
-			background-color: #3BA8D3;
+			background-color: #0F4C75;
 			top: 1px;
 		}
 

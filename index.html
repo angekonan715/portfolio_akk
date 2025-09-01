@@ -11,6 +11,206 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<style>
+		/* Enhanced responsive design for main page */
+
+		/* Mobile devices (up to 768px) */
+		@media screen and (max-width: 768px) {
+
+			/* Adjust navigation for mobile */
+			#nav ul.container {
+				padding: 0 10px;
+			}
+
+			#nav a {
+				font-size: 0.9em;
+				padding: 8px 12px;
+			}
+
+			/* Adjust main content spacing */
+			.wrapper {
+				padding: 2em 0;
+			}
+
+			/* Adjust button sizes */
+			.button.large {
+				padding: 12px 24px;
+				font-size: 1em;
+			}
+
+			/* Adjust image sizing */
+			.image.fit img {
+				max-width: 100%;
+				height: auto;
+			}
+		}
+
+		/* Tablet devices (768px to 1024px) */
+		@media screen and (min-width: 769px) and (max-width: 1024px) {
+			.wrapper {
+				padding: 3em 0;
+			}
+
+			.button.large {
+				padding: 14px 28px;
+				font-size: 1.1em;
+			}
+		}
+
+		/* Large screens (1025px and above) */
+		@media screen and (min-width: 1025px) {
+			.wrapper {
+				padding: 4em 0;
+			}
+
+			.button.large {
+				padding: 18px 36px;
+				font-size: 1.3em;
+			}
+		}
+
+		/* Extra large screens (1440px and above) */
+		@media screen and (min-width: 1440px) {
+			.wrapper {
+				padding: 5em 0;
+			}
+
+			.button.large {
+				padding: 20px 40px;
+				font-size: 1.4em;
+			}
+
+			/* Enhanced typography for large screens */
+			h1 {
+				font-size: 2.8em;
+			}
+
+			h2 {
+				font-size: 2.2em;
+			}
+
+			h3 {
+				font-size: 1.6em;
+			}
+		}
+
+		/* Additional responsive enhancements */
+
+		/* Small mobile devices (up to 480px) */
+		@media screen and (max-width: 480px) {
+			#nav a {
+				font-size: 0.8em;
+				padding: 6px 8px;
+			}
+
+			.wrapper {
+				padding: 1.5em 0;
+			}
+
+			.button.large {
+				padding: 10px 20px;
+				font-size: 0.9em;
+			}
+
+			h1 {
+				font-size: 1.6em;
+			}
+
+			h2 {
+				font-size: 1.3em;
+			}
+
+			h3 {
+				font-size: 1.1em;
+			}
+
+			/* Adjust image sizing for very small screens */
+			.image.fit img {
+				max-width: 100%;
+				height: auto;
+			}
+
+			/* Adjust form elements */
+			input[type="text"],
+			input[type="email"],
+			textarea {
+				font-size: 16px;
+				/* Prevents zoom on iOS */
+			}
+		}
+
+		/* Landscape mobile devices */
+		@media screen and (max-width: 768px) and (orientation: landscape) {
+			.wrapper {
+				padding: 1.5em 0;
+			}
+
+			#nav {
+				position: fixed;
+				top: 0;
+				width: 100%;
+				z-index: 1000;
+			}
+		}
+
+		/* High DPI displays */
+		@media (-webkit-min-device-pixel-ratio: 2),
+		(min-resolution: 192dpi) {
+			.image.fit img {
+				image-rendering: -webkit-optimize-contrast;
+				image-rendering: crisp-edges;
+			}
+		}
+
+		/* Professional styling for work cards */
+		.box.style1 a {
+			text-decoration: none;
+			color: inherit;
+			transition: all 0.3s ease;
+			display: block;
+		}
+
+		.box.style1 a:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+		}
+
+		.box.style1 a:hover h3 {
+			color: #e87a90;
+		}
+
+		.box.style1 a:hover p {
+			color: #666;
+		}
+
+		.box.style1 a:hover::after {
+			content: "Click to learn more →";
+			display: block;
+			text-align: center;
+			margin-top: 10px;
+			font-size: 0.9em;
+			color: #e87a90;
+			font-weight: 500;
+		}
+
+		/* Responsive adjustments for work cards */
+		@media screen and (max-width: 768px) {
+			.box.style1 a:hover {
+				transform: translateY(-3px);
+			}
+
+			.box.style1 a:hover::after {
+				font-size: 0.8em;
+				margin-top: 8px;
+			}
+		}
+
+		@media screen and (min-width: 769px) and (max-width: 1024px) {
+			.box.style1 a:hover {
+				transform: translateY(-4px);
+			}
+		}
+	</style>
 </head>
 
 <body class="is-preload">
@@ -19,9 +219,11 @@
 	<nav id="nav">
 		<ul class="container">
 			<li><a href="#top">Top</a></li>
-			<li><a href="#work">Work</a></li>
-			<li><a href="#portfolio">Portfolio</a></li>
+			<li><a href="mywork.html" target="_blank">My Work</a></li>
+			<li><a href="mystory.html" target="_blank">My Story</a></li>
+			<li><a href="resume.html" target="_blank">MyResume</a></li>
 			<li><a href="#contact">Contact</a></li>
+
 		</ul>
 	</nav>
 
@@ -36,10 +238,15 @@
 					<header>
 						<h1>Hi. I'm <strong>Ange K. kouadio</strong>.</h1>
 					</header>
-					<p>And this is <strong>My portfolio</strong>, a free, fully responsive HTML5 site template designed
-						by
-						<a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net">HTML5 UP</a> &amp;
-						released under the <a href="http://html5up.net/license">CCA license</a>.
+					<p>I'm a <strong>data scientist</strong>, <strong>mathematician</strong>, and <strong>actuarial
+							scientist</strong>
+						passionate about extracting insights from data. I am interested in working in financial
+						services, marketing, healthcare,
+						and other data-driven fields.
+						As a <strong>fast learner</strong> and <strong>book craver</strong>, I bring curiosity and
+						determination
+						to every project. I value collaboration, mentorship, and feedback as stepping stones to
+						excellence.
 					</p>
 					<a href="#work" class="button large scrolly">Learn about what I do</a>
 				</div>
@@ -47,101 +254,120 @@
 		</div>
 	</article>
 
-	<!-- Work -->
+	<!-- My Work -->
 	<article id="work" class="wrapper style2">
 		<div class="container">
 			<header>
 				<h2>Here's all the stuff I do.</h2>
-				<p>Odio turpis amet sed consequat eget posuere consequat.</p>
+				<p>Explore my projects and professional work across different domains</p>
 			</header>
 			<div class="row aln-center">
 				<div class="col-4 col-6-medium col-12-small">
 					<section class="box style1">
-						<span class="icon featured fa-comments"></span>
-						<h3>Consequat lorem</h3>
-						<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem
-							dolore.</p>
+						<a href="mywork.html#data-science-projects" target="_blank">
+							<span class="icon featured fa-chart-line"></span>
+							<h3>Data Science Projects</h3>
+							<p>Machine Learning Models<br>
+								Predictive Analytics<br>
+								Statistical Analysis<br>
+								Data Visualization</p>
+						</a>
 					</section>
 				</div>
 				<div class="col-4 col-6-medium col-12-small">
 					<section class="box style1">
-						<span class="icon solid featured fa-camera-retro"></span>
-						<h3>Lorem dolor tempus</h3>
-						<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem
-							dolore.</p>
+						<a href="mywork.html#actuarial-projects" target="_blank">
+							<span class="icon solid featured fa-calculator"></span>
+							<h3>Actuarial Projects</h3>
+							<p>Risk Assessment Models<br>
+								Mortality Analysis<br>
+								Premium Pricing<br>
+								Financial Modeling</p>
+						</a>
 					</section>
 				</div>
 				<div class="col-4 col-6-medium col-12-small">
 					<section class="box style1">
-						<span class="icon featured fa-thumbs-up"></span>
-						<h3>Feugiat posuere</h3>
-						<p>Ornare nulla proin odio consequat sapien vestibulum ipsum primis sed amet consequat lorem
-							dolore.</p>
+						<a href="mywork.html#healthcare-analytics" target="_blank">
+							<span class="icon featured fa-heartbeat"></span>
+							<h3>Healthcare Analytics</h3>
+							<p>Patient Outcome Analysis<br>
+								Clinical Decision Support<br>
+								Resource Optimization<br>
+								Quality Metrics</p>
+						</a>
+					</section>
+				</div>
+				<div class="col-4 col-6-medium col-12-small">
+					<section class="box style1">
+						<a href="mywork.html#financial-analytics" target="_blank">
+							<span class="icon solid featured fa-chart-bar"></span>
+							<h3>Financial Analytics</h3>
+							<p>Fraud Detection<br>
+								Credit Risk Modeling<br>
+								Investment Analysis<br>
+								Market Forecasting</p>
+						</a>
+					</section>
+				</div>
+				<div class="col-4 col-6-medium col-12-small">
+					<section class="box style1">
+						<a href="mywork.html#marketing-analytics" target="_blank">
+							<span class="icon featured fa-bullhorn"></span>
+							<h3>Marketing Analytics</h3>
+							<p>Customer Segmentation<br>
+								Campaign Optimization<br>
+								Churn Prediction<br>
+								ROI Analysis</p>
+						</a>
+					</section>
+				</div>
+				<div class="col-4 col-6-medium col-12-small">
+					<section class="box style1">
+						<a href="mywork.html#research-projects" target="_blank">
+							<span class="icon solid featured fa-microscope"></span>
+							<h3>Research Projects</h3>
+							<p>Academic Publications<br>
+								Methodology Development<br>
+								Algorithm Optimization<br>
+								Industry Applications</p>
+						</a>
 					</section>
 				</div>
 			</div>
 			<footer>
-				<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-				<a href="#portfolio" class="button large scrolly">See some of my recent work</a>
+				<p>Click on any category above to explore detailed projects, or view all my work</p>
+				<a href="mywork.html" class="button large scrolly" target="_blank">View All My Work</a>
 			</footer>
 		</div>
 	</article>
 
-	<!-- Portfolio -->
-	<article id="portfolio" class="wrapper style3">
+
+
+	<!-- Resume -->
+	<article id="MyResume" class="wrapper style2">
 		<div class="container">
 			<header>
-				<h2>Here's some stuff I made recently.</h2>
-				<p>Proin odio consequat sapien vestibulum consequat lorem dolore feugiat.</p>
+				<h2>My Resume</h2>
+				<p>Click below to view my resume online or download the PDF version</p>
 			</header>
-			<div class="row">
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-						<h3><a href="#">Magna feugiat</a></h3>
-						<p>Ornare nulla proin odio consequat.</p>
-					</article>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-						<h3><a href="#">Veroeros primis</a></h3>
-						<p>Ornare nulla proin odio consequat.</p>
-					</article>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
-						<h3><a href="#">Lorem ipsum</a></h3>
-						<p>Ornare nulla proin odio consequat.</p>
-					</article>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
-						<h3><a href="#">Tempus dolore</a></h3>
-						<p>Ornare nulla proin odio consequat.</p>
-					</article>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
-						<h3><a href="#">Feugiat aliquam</a></h3>
-						<p>Ornare nulla proin odio consequat.</p>
-					</article>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<article class="box style2">
-						<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
-						<h3><a href="#">Sed amet ornare</a></h3>
-						<p>Ornare nulla proin odio consequat.</p>
-					</article>
+			<div class="row aln-center">
+				<div class="col-6 col-12-medium">
+					<section class="box style1">
+						<span class="icon featured fa-file-pdf"></span>
+						<h3>Resume</h3>
+						<p>Professional experience, skills, and qualifications</p>
+						<a href="resume.html" class="button large" target="_blank">
+							<span class="icon solid fa-eye"></span>
+							View Resume Online
+						</a>
+						<a href="images/MyResume.pdf" class="button large" target="_blank" style="margin-top: 10px;">
+							<span class="icon solid fa-download"></span>
+							Download PDF
+						</a>
+					</section>
 				</div>
 			</div>
-			<footer>
-				<p>Lorem ipsum dolor sit sapien vestibulum ipsum primis?</p>
-				<a href="#contact" class="button large scrolly">Get in touch with me</a>
-			</footer>
 		</div>
 	</article>
 

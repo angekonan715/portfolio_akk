@@ -1,0 +1,285 @@
+<!DOCTYPE HTML>
+<!--
+	Resume Page
+	Based on Miniport by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Resume - Ange K. Kouadio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+    <style>
+        /* Dark theme styling for resume page */
+        body {
+            background-color: #2a2a2a;
+            color: #ffffff;
+        }
+
+        /* Header bar styling */
+        .resume-header {
+            background-color: #3a4a5a;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .resume-header h1 {
+            color: #ffffff;
+            margin: 0;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        /* Resume image container */
+        .resume-container {
+            background-color: #2a2a2a;
+            padding: 20px;
+            min-height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        .resume-image {
+            max-width: 100%;
+            height: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+        }
+
+        /* Download button styling */
+        .download-section {
+            background-color: #3a4a5a;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .download-button {
+            background-color: #e87a90;
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .download-button:hover {
+            background-color: #d66a80;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(232, 122, 144, 0.3);
+        }
+
+        /* Navigation styling */
+        #nav {
+            background-color: #3a4a5a;
+        }
+
+        #nav a {
+            color: #ffffff;
+        }
+
+        #nav a:hover {
+            background-color: #e87a90;
+        }
+
+        /* Responsive Design */
+
+        /* Mobile devices (up to 768px) */
+        @media screen and (max-width: 768px) {
+            .resume-header h1 {
+                font-size: 1.5em;
+            }
+
+            .resume-container {
+                padding: 10px;
+                min-height: 60vh;
+            }
+
+            .download-button {
+                padding: 12px 24px;
+                font-size: 1em;
+            }
+
+            #nav ul.container {
+                padding: 0 10px;
+            }
+
+            #nav a {
+                font-size: 0.9em;
+                padding: 8px 12px;
+            }
+        }
+
+        /* Tablet devices (768px to 1024px) */
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .resume-header h1 {
+                font-size: 1.8em;
+            }
+
+            .resume-container {
+                padding: 15px;
+            }
+
+            .download-button {
+                padding: 14px 28px;
+                font-size: 1.1em;
+            }
+        }
+
+        /* Large screens (1025px and above) */
+        @media screen and (min-width: 1025px) {
+            .resume-header h1 {
+                font-size: 2.2em;
+            }
+
+            .resume-container {
+                padding: 30px;
+            }
+
+            .download-button {
+                padding: 18px 36px;
+                font-size: 1.3em;
+            }
+        }
+
+        /* Extra large screens (1440px and above) */
+        @media screen and (min-width: 1440px) {
+            .resume-header h1 {
+                font-size: 2.5em;
+            }
+
+            .resume-container {
+                padding: 40px;
+            }
+
+            .download-button {
+                padding: 20px 40px;
+                font-size: 1.4em;
+            }
+        }
+
+        /* Additional responsive enhancements */
+
+        /* Small mobile devices (up to 480px) */
+        @media screen and (max-width: 480px) {
+            .resume-header h1 {
+                font-size: 1.3em;
+            }
+
+            .resume-container {
+                padding: 5px;
+                min-height: 50vh;
+            }
+
+            .download-button {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            #nav a {
+                font-size: 0.8em;
+                padding: 6px 8px;
+            }
+
+            #nav ul.container {
+                padding: 0 5px;
+            }
+        }
+
+        /* Landscape mobile devices */
+        @media screen and (max-width: 768px) and (orientation: landscape) {
+            .resume-container {
+                min-height: 60vh;
+            }
+
+            #nav {
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 1000;
+            }
+        }
+
+        /* High DPI displays */
+        @media (-webkit-min-device-pixel-ratio: 2),
+        (min-resolution: 192dpi) {
+            .resume-image {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Print styles */
+        @media print {
+            #nav {
+                display: none;
+            }
+
+            .resume-header {
+                background-color: #ffffff !important;
+                color: #000000 !important;
+            }
+
+            .resume-header h1 {
+                color: #000000 !important;
+            }
+
+            .download-section {
+                display: none;
+            }
+
+            .resume-image {
+                box-shadow: none;
+                border: 1px solid #ccc;
+            }
+        }
+    </style>
+</head>
+
+<body class="is-preload">
+
+    <!-- Nav -->
+    <nav id="nav">
+        <ul class="container">
+            <li><a href="index.html">← Back to Main Page</a></li>
+        </ul>
+    </nav>
+
+    <!-- Header -->
+    <div class="resume-header">
+        <h1>My Recent Resume</h1>
+    </div>
+
+    <!-- Resume Image -->
+    <div class="resume-container">
+        <img src="images/myresumescreenshot.png" alt="Ange K. Kouadio Resume" class="resume-image" />
+    </div>
+
+    <!-- Download Section -->
+    <div class="download-section">
+        <a href="images/MyResume.pdf" class="download-button" target="_blank">
+            <span class="icon solid fa-download"></span>
+            Download Resume
+        </a>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.scrolly.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
