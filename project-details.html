@@ -111,6 +111,14 @@
 			color: white;
 		}
 
+		.tab-content {
+			display: none;
+		}
+
+		.tab-content.active {
+			display: block;
+		}
+
 		/* Code section */
 		.code-section {
 			background-color: #ffffff;
@@ -323,11 +331,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Load data (assuming you have equivalent datasets)
-# planes_df = pd.read_csv('planes.csv')
-# flights_df = pd.read_csv('flights.csv')
-# airlines_df = pd.read_csv('airlines.csv')
-
 # Data preparation
 planes1 = planes_df[['tailnum', 'year', 'type', 'manufacturer', 'model']]
 flights1 = flights_df[['tailnum', 'carrier', 'dep_delay', 'arr_delay']]
@@ -386,24 +389,12 @@ portfolio_data <- data.frame(
 
 # Calculate correlation matrix
 correlation_matrix <- cor(portfolio_data[,-1], use="complete.obs")
-
-# Portfolio performance metrics
-portfolio_summary <- portfolio_data %>%
-  gather(key = "Stock", value = "Return", -Date) %>%
-  group_by(Stock) %>%
-  summarise(
-    Mean_Return = mean(Return, na.rm = TRUE),
-    Volatility = sd(Return, na.rm = TRUE),
-    Sharpe_Ratio = Mean_Return / Volatility
-  )
 					</div>
 					<div id="stock-code-python" class="code-block hidden">
 # Python equivalent for Stock Portfolio Analysis
 import yfinance as yf
 import pandas as pd
 import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
 
 # Get stock data
 tickers = ['AAPL', 'GOOGL', 'MSFT', 'AMZN']
@@ -412,15 +403,8 @@ data = yf.download(tickers, start='2020-01-01')['Adj Close']
 # Calculate returns
 returns = data.pct_change()
 
-# Portfolio analysis
-portfolio_data = returns.copy()
-
 # Calculate correlation matrix
-correlation_matrix = portfolio_data.corr()
-
-# Portfolio performance metrics
-portfolio_summary = portfolio_data.agg(['mean', 'std']).T
-portfolio_summary['Sharpe_Ratio'] = portfolio_summary['mean'] / portfolio_summary['std']
+correlation_matrix = returns.corr()
 					</div>
 				</div>
 			</div>
