@@ -337,37 +337,168 @@
 
 		/* Hero Section */
 		.hero-section {
-			background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%),
-				url('images/mypict.jpg') center/cover no-repeat;
+			background: var(--light-gray);
 			padding: 8rem 0 4rem 0;
 			margin-top: 70px;
 			position: relative;
-		}
-
-		.hero-section::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			right: 0;
-			bottom: 0;
-			background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 255, 255, 0.8) 100%);
-			z-index: 1;
-		}
-
-		.hero-container {
-			position: relative;
-			z-index: 2;
 		}
 
 		.hero-container {
 			max-width: 1200px;
 			margin: 0 auto;
 			padding: 0 2rem;
-			display: grid;
-			grid-template-columns: 1fr 1fr;
-			gap: 4rem;
+			display: flex;
+			justify-content: center;
 			align-items: center;
+		}
+
+		.profile-card {
+			background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 250, 252, 0.9) 50%, rgba(241, 245, 249, 0.85) 100%);
+			border-radius: 16px;
+			padding: 4rem;
+			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 8px 25px rgba(0, 0, 0, 0.05);
+			display: flex;
+			align-items: center;
+			gap: 4rem;
+			max-width: 1200px;
+			width: 100%;
+			min-height: 450px;
+			border: 1px solid rgba(255, 255, 255, 0.3);
+			backdrop-filter: blur(10px);
+			position: relative;
+		}
+
+		.profile-card::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(135deg, rgba(255, 107, 53, 0.05) 0%, rgba(44, 90, 160, 0.03) 100%);
+			border-radius: 16px;
+			z-index: -1;
+		}
+
+		.profile-image-section {
+			position: relative;
+			flex-shrink: 0;
+		}
+
+		.profile-image {
+			width: 350px;
+			height: 350px;
+			border-radius: 12px;
+			object-fit: cover;
+			object-position: center top;
+			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+		}
+
+		.profile-info {
+			flex: 1;
+			text-align: center;
+		}
+
+		.profile-name {
+			font-size: 1.2rem;
+			color: var(--primary-orange);
+			font-weight: 700;
+			margin-bottom: 0.5rem;
+		}
+
+		.profile-title {
+			font-size: 2.5rem;
+			font-weight: 700;
+			color: #2c5aa0;
+			margin-bottom: 2rem;
+		}
+
+		.profile-roles {
+			display: flex;
+			gap: 2rem;
+		}
+
+		.role-item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			text-align: center;
+		}
+
+		.role-icon {
+			font-size: 2.5rem;
+			margin-bottom: 0.5rem;
+		}
+
+		.role-label {
+			font-size: 1rem;
+			font-weight: 600;
+			color: #2c5aa0;
+		}
+
+		.profile-actions {
+			margin-top: 2rem;
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.profile-actions .btn-primary,
+		.profile-actions .btn-secondary {
+			position: relative;
+			padding: 0.75rem 1.5rem;
+			border-radius: 8px;
+			font-weight: 600;
+			text-decoration: none;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			transition: all 0.3s ease;
+			cursor: pointer;
+			font-size: 1rem;
+			border: 2px solid transparent;
+		}
+
+		.profile-actions .btn-primary {
+			background: var(--primary-orange);
+			color: var(--white);
+		}
+
+		.profile-actions .btn-secondary {
+			background: transparent;
+			color: var(--primary-orange);
+			border-color: var(--primary-orange);
+		}
+
+		.profile-actions .btn-primary:hover {
+			background: #e55a2b;
+			transform: translateY(-2px);
+			box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+		}
+
+		.profile-actions .btn-secondary:hover {
+			background: var(--primary-orange);
+			color: var(--white);
+			transform: translateY(-2px);
+			box-shadow: 0 8px 25px rgba(255, 107, 53, 0.2);
+		}
+
+		.profile-actions .btn-primary::after,
+		.profile-actions .btn-secondary::after {
+			content: '';
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: var(--white);
+			transition: width 0.3s ease;
+		}
+
+		.profile-actions .btn-primary:hover::after,
+		.profile-actions .btn-secondary:hover::after {
+			width: 100%;
 		}
 
 		.hero-content h1 {
@@ -380,6 +511,11 @@
 
 		.hero-content .highlight {
 			color: var(--primary-orange);
+		}
+
+		.profession-highlight {
+			color: var(--primary-orange);
+			font-weight: 600;
 		}
 
 		.hero-content p {
@@ -995,61 +1131,238 @@
 			font-weight: 500;
 		}
 
-		/* Google Form Styling */
-		.google-form-container {
+		/* Contact Section Styling */
+		.contact-content {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			max-width: 800px;
+			margin: 0 auto;
 			background: rgba(255, 255, 255, 0.95);
 			border-radius: 12px;
-			padding: 2rem;
+			padding: 3rem;
 			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 			backdrop-filter: blur(10px);
-			border: 1px solid rgba(255, 255, 255, 0.2);
-			margin-bottom: 2rem;
 		}
 
-		.google-form-iframe {
-			border-radius: 8px;
-			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+		.contact-info {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
 		}
 
-		.form-alternative {
-			text-align: center;
-			padding: 1.5rem;
-			background: rgba(255, 255, 255, 0.9);
-			border-radius: 8px;
-			border: 2px dashed var(--primary-orange);
+		.contact-item {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
 		}
 
-		.form-alternative p {
-			margin: 0;
+		.contact-icon {
+			font-size: 1.5rem;
+			width: 40px;
+			height: 40px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background: var(--primary-orange);
+			border-radius: 50%;
+			color: var(--white);
+		}
+
+		.contact-text {
+			font-size: 1.1rem;
+			font-weight: 500;
 			color: var(--text-dark);
+		}
+
+		.contact-divider {
+			width: 2px;
+			height: 120px;
+			background: var(--border-light);
+			margin: 0 2rem;
+		}
+
+		.hire-section {
+			display: flex;
+			align-items: center;
+		}
+
+		.hire-btn {
+			background: var(--primary-orange);
+			color: var(--white);
+			border: none;
+			padding: 1rem 2rem;
+			font-size: 1.2rem;
+			font-weight: 600;
+			border-radius: 8px;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.hire-btn:hover {
+			background: var(--primary-orange-hover);
+			transform: translateY(-2px);
+			box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
+		}
+
+		/* Modal Styling */
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 2000;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			backdrop-filter: blur(5px);
+		}
+
+		.modal-content {
+			background-color: var(--white);
+			margin: 15% auto;
+			padding: 2rem;
+			border-radius: 12px;
+			width: 90%;
+			max-width: 500px;
+			position: relative;
+			box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+			animation: modalSlideIn 0.3s ease;
+		}
+
+		@keyframes modalSlideIn {
+			from {
+				opacity: 0;
+				transform: translateY(-50px);
+			}
+
+			to {
+				opacity: 1;
+				transform: translateY(0);
+			}
+		}
+
+		.close {
+			color: var(--text-dark);
+			float: right;
+			font-size: 2rem;
+			font-weight: bold;
+			cursor: pointer;
+			position: absolute;
+			top: 1rem;
+			right: 1.5rem;
+			transition: color 0.3s ease;
+		}
+
+		.close:hover {
+			color: var(--primary-orange);
+		}
+
+		.modal-content h2 {
+			color: var(--primary-orange);
+			text-align: center;
+			margin-bottom: 1rem;
+			font-size: 1.8rem;
+		}
+
+		.modal-content p {
+			text-align: center;
+			color: var(--text-light);
+			margin-bottom: 2rem;
 			font-size: 1rem;
 		}
 
-		.form-link {
-			color: var(--primary-orange);
-			text-decoration: none;
-			font-weight: 600;
-			position: relative;
-			transition: all 0.3s ease;
+		#hireForm {
+			display: flex;
+			flex-direction: column;
+			gap: 1.5rem;
 		}
 
-		.form-link::after {
-			content: '';
-			position: absolute;
-			bottom: -2px;
-			left: 0;
-			width: 0;
-			height: 2px;
+		#clientEmail {
+			padding: 1rem;
+			border: 2px solid var(--border-light);
+			border-radius: 8px;
+			font-size: 1rem;
+			transition: border-color 0.3s ease;
+		}
+
+		#clientEmail:focus {
+			outline: none;
+			border-color: var(--primary-orange);
+		}
+
+		.submit-btn {
 			background: var(--primary-orange);
+			color: var(--white);
+			border: none;
+			padding: 1rem 2rem;
+			font-size: 1.1rem;
+			font-weight: 600;
+			border-radius: 8px;
+			cursor: pointer;
 			transition: all 0.3s ease;
 		}
 
-		.form-link:hover::after {
-			width: 100%;
+		.submit-btn:hover {
+			background: var(--primary-orange-hover);
+			transform: translateY(-2px);
+			box-shadow: 0 8px 25px rgba(255, 107, 53, 0.3);
 		}
 
-		.form-link:hover {
-			color: #e67e00;
+		/* Summary Modal Styling */
+		.summary-modal {
+			max-width: 600px;
+		}
+
+		.summary-content {
+			margin-bottom: 2rem;
+		}
+
+		.summary-section {
+			margin-bottom: 1.5rem;
+		}
+
+		.summary-section h3 {
+			color: var(--primary-orange);
+			font-size: 1.2rem;
+			margin-bottom: 0.5rem;
+			font-weight: 600;
+		}
+
+		.summary-section p {
+			color: var(--text-dark);
+			line-height: 1.6;
+			margin: 0;
+		}
+
+		.summary-actions {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+		}
+
+		.summary-actions .btn-primary,
+		.summary-actions .btn-secondary {
+			padding: 0.8rem 1.5rem;
+			text-decoration: none;
+			border-radius: 8px;
+			font-weight: 600;
+			transition: all 0.3s ease;
+			border: none;
+			cursor: pointer;
+		}
+
+		.summary-actions .btn-secondary {
+			background: var(--white);
+			color: var(--text-dark);
+			border: 2px solid var(--border-light);
+		}
+
+		.summary-actions .btn-secondary:hover {
+			border-color: var(--primary-orange);
+			color: var(--primary-orange);
 		}
 
 		.social-links {
@@ -1136,6 +1449,65 @@
 
 			.social-list {
 				flex-wrap: wrap;
+			}
+
+			.contact-content {
+				flex-direction: column;
+				gap: 2rem;
+				padding: 2rem;
+			}
+
+			.contact-divider {
+				width: 100%;
+				height: 2px;
+				margin: 0;
+			}
+
+			.contact-info {
+				width: 100%;
+			}
+
+			.hire-section {
+				width: 100%;
+				justify-content: center;
+			}
+
+			.modal-content {
+				margin: 20% auto;
+				width: 95%;
+				padding: 1.5rem;
+			}
+
+			.profile-card {
+				flex-direction: column;
+				text-align: center;
+				padding: 3rem 2rem;
+				gap: 2.5rem;
+				max-width: 95%;
+				min-height: auto;
+			}
+
+			.profile-image {
+				width: 280px;
+				height: 280px;
+			}
+
+			.profile-roles {
+				justify-content: center;
+				flex-wrap: wrap;
+				gap: 1rem;
+			}
+
+			.role-item {
+				min-width: 120px;
+			}
+
+			.profile-title {
+				font-size: 2rem;
+			}
+
+			.profile-actions {
+				justify-content: center;
 			}
 		}
 	</style>
@@ -1225,24 +1597,42 @@
 	<!-- Hero Section -->
 	<section class="hero-section" id="top">
 		<div class="hero-container">
-			<div class="hero-content">
-				<h1>Hi. I'm <span class="highlight">Ange K. Kouadio</span>.</h1>
-				<p>I'm a <strong>data scientist</strong>, <strong>mathematician</strong>, and <strong>actuarial
-						scientist</strong> passionate about extracting insights from data. I am interested in working in
-					financial services, marketing, healthcare, and other data-driven fields.</p>
-				<p>As a <strong>fast learner</strong> and <strong>book craver</strong>, I bring curiosity and
-					determination to every project. I value collaboration, mentorship, and feedback as stepping stones
-					to excellence.</p>
-				<div class="hero-cta">
-					<a href="#work" class="btn-primary">
-						Learn about what I do
-						<span>→</span>
-					</a>
-					<a href="resume.html" class="btn-secondary">View Resume</a>
+			<div class="profile-card">
+				<div class="profile-info">
+					<div class="profile-name">Ange K. Kouadio</div>
+					<div class="profile-title">Data Scientist</div>
+					<div class="profile-roles">
+						<div class="role-item">
+							<div class="role-icon">🧠</div>
+							<div class="role-label">Data Scientist</div>
+						</div>
+						<div class="role-item">
+							<div class="role-icon">📊</div>
+							<div class="role-label">Statistician</div>
+						</div>
+						<div class="role-item">
+							<div class="role-icon">🔢</div>
+							<div class="role-label">Mathematician</div>
+						</div>
+						<div class="role-item">
+							<div class="role-icon">📈</div>
+							<div class="role-label">Aspiring Actuarial Scientist</div>
+						</div>
+					</div>
+					<div class="profile-actions">
+						<button class="btn-primary" id="summaryBtn">
+							Summary
+							<span>→</span>
+						</button>
+						<a href="#work" class="btn-secondary">
+							My Work
+							<span>→</span>
+						</a>
+					</div>
 				</div>
-			</div>
-			<div class="hero-image">
-				<img src="images/mypict.jpg" alt="Ange K. Kouadio - Data Scientist" />
+				<div class="profile-image-section">
+					<img src="images/mypict.jpg" alt="Ange K. Kouadio - Data Scientist" class="profile-image" />
+				</div>
 			</div>
 		</div>
 	</section>
@@ -1366,40 +1756,69 @@
 	<section id="contact" class="contact-section">
 		<div class="contact-container">
 			<div class="contact-header">
-				<h2>Have me make stuff for you.</h2>
-				<p>Let's collaborate on your next data-driven project</p>
+				<h2>Contact Me</h2>
 			</div>
 
-			<div class="contact-form">
-				<!-- Google Form Integration -->
-				<div class="google-form-container">
-					<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYOUR_FORM_ID_HERE/viewform?embedded=true"
-						width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
-						class="google-form-iframe">
-						Loading…
-					</iframe>
+			<div class="contact-content">
+				<div class="contact-info">
+					<div class="contact-item">
+						<div class="contact-icon">💼</div>
+						<span class="contact-text">LinkedIn: Ange Kouadio</span>
+					</div>
+					<div class="contact-item">
+						<div class="contact-icon">📧</div>
+						<span class="contact-text">angekk419@gmail.com</span>
+					</div>
+					<div class="contact-item">
+						<div class="contact-icon">📱</div>
+						<span class="contact-text">+1 (555) 123-4567</span>
+					</div>
 				</div>
 
-				<!-- Alternative: Direct Link Button -->
-				<div class="form-alternative">
-					<p>Having trouble with the form above? <a
-							href="https://docs.google.com/forms/d/e/1FAIpQLSdYOUR_FORM_ID_HERE/viewform" target="_blank"
-							class="form-link">Click here to open in a new tab</a></p>
-				</div>
-			</div>
+				<div class="contact-divider"></div>
 
-			<div class="social-links">
-				<h3>Find me on ...</h3>
-				<ul class="social-list">
-					<li><a href="#" class="social-link">🐦</a></li>
-					<li><a href="#" class="social-link">📘</a></li>
-					<li><a href="#" class="social-link">💼</a></li>
-					<li><a href="#" class="social-link">🐙</a></li>
-					<li><a href="#" class="social-link">📧</a></li>
-				</ul>
+				<div class="hire-section">
+					<button class="hire-btn" id="hireBtn">Hire Me</button>
+				</div>
 			</div>
 		</div>
 	</section>
+
+	<!-- Hire Me Modal -->
+	<div id="hireModal" class="modal">
+		<div class="modal-content">
+			<span class="close" id="closeModal">&times;</span>
+			<h2>Great Decision!</h2>
+			<p>Please share with me a good email to keep in touch:</p>
+			<form id="hireForm">
+				<input type="email" id="clientEmail" placeholder="your.email@example.com" required>
+				<button type="submit" class="submit-btn">Submit</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Summary Modal -->
+	<div id="summaryModal" class="modal">
+		<div class="modal-content summary-modal">
+			<span class="close" id="closeSummaryModal">&times;</span>
+			<h2>About Ange K. Kouadio</h2>
+			<div class="summary-content">
+				<p>I'm a <span class="profession-highlight">data scientist</span>, <span
+						class="profession-highlight">mathematician</span>, and <span
+						class="profession-highlight">aspiring actuarial scientist</span> passionate about extracting
+					insights from data. I am interested in working in financial services, marketing, healthcare, and
+					other data-driven fields. As a <span class="profession-highlight">fast learner</span> and <span
+						class="profession-highlight">book craver</span>, I bring curiosity and determination to every
+					project. I value collaboration, mentorship, and feedback as stepping stones to excellence.</p>
+			</div>
+			<div class="summary-actions">
+				<button class="btn-primary"
+					onclick="document.getElementById('summaryModal').style.display='none'">Close</button>
+				<a href="#work" class="btn-secondary"
+					onclick="document.getElementById('summaryModal').style.display='none'">View My Work</a>
+			</div>
+		</div>
+	</div>
 
 	<!-- Footer -->
 	<footer class="footer">
@@ -1414,6 +1833,103 @@
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
 
+	<!-- Modal JavaScript -->
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const modal = document.getElementById('hireModal');
+			const hireBtn = document.getElementById('hireBtn');
+			const closeBtn = document.getElementById('closeModal');
+			const hireForm = document.getElementById('hireForm');
+
+			const summaryModal = document.getElementById('summaryModal');
+			const summaryBtn = document.getElementById('summaryBtn');
+			const closeSummaryBtn = document.getElementById('closeSummaryModal');
+
+			// Open modal when Hire Me button is clicked
+			hireBtn.addEventListener('click', function () {
+				modal.style.display = 'block';
+				document.body.style.overflow = 'hidden'; // Prevent background scrolling
+			});
+
+			// Close modal when X is clicked
+			closeBtn.addEventListener('click', function () {
+				modal.style.display = 'none';
+				document.body.style.overflow = 'auto'; // Restore scrolling
+			});
+
+			// Close modal when clicking outside of it
+			window.addEventListener('click', function (event) {
+				if (event.target === modal) {
+					modal.style.display = 'none';
+					document.body.style.overflow = 'auto'; // Restore scrolling
+				}
+			});
+
+			// Handle form submission
+			hireForm.addEventListener('submit', function (e) {
+				e.preventDefault();
+
+				const email = document.getElementById('clientEmail').value;
+
+				if (email) {
+					// Create mailto link
+					const subject = 'Hiring Inquiry - Portfolio Contact';
+					const body = `Hello Ange,\n\nI'm interested in hiring you for a project. Please contact me at: ${email}\n\nBest regards`;
+					const mailtoLink = `mailto:angekk419@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+					// Open email client
+					window.location.href = mailtoLink;
+
+					// Close modal
+					modal.style.display = 'none';
+					document.body.style.overflow = 'auto';
+
+					// Reset form
+					hireForm.reset();
+
+					// Show success message (optional)
+					alert('Thank you! Your email client should open with a pre-filled message.');
+				}
+			});
+
+			// Close modal with Escape key
+			document.addEventListener('keydown', function (event) {
+				if (event.key === 'Escape' && modal.style.display === 'block') {
+					modal.style.display = 'none';
+					document.body.style.overflow = 'auto';
+				}
+			});
+
+			// Summary Modal functionality
+			// Open summary modal when "Learn about what I do" button is clicked
+			summaryBtn.addEventListener('click', function () {
+				summaryModal.style.display = 'block';
+				document.body.style.overflow = 'hidden';
+			});
+
+			// Close summary modal when X is clicked
+			closeSummaryBtn.addEventListener('click', function () {
+				summaryModal.style.display = 'none';
+				document.body.style.overflow = 'auto';
+			});
+
+			// Close summary modal when clicking outside of it
+			window.addEventListener('click', function (event) {
+				if (event.target === summaryModal) {
+					summaryModal.style.display = 'none';
+					document.body.style.overflow = 'auto';
+				}
+			});
+
+			// Close summary modal with Escape key
+			document.addEventListener('keydown', function (event) {
+				if (event.key === 'Escape' && summaryModal.style.display === 'block') {
+					summaryModal.style.display = 'none';
+					document.body.style.overflow = 'auto';
+				}
+			});
+		});
+	</script>
 
 </body>
 
