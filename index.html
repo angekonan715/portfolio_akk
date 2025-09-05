@@ -1,213 +1,1141 @@
 <!DOCTYPE HTML>
 <!--
-	Miniport by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+	Ange K. Kouadio - Data Scientist Portfolio
+	Inspired by modern corporate design
 -->
 <html>
 
 <head>
-	<title>Miniport by HTML5 UP</title>
+	<title>Ange K. Kouadio - Data Scientist & Actuarial Scientist</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 	<link rel="stylesheet" href="assets/css/main.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<style>
-		/* Enhanced responsive design for main page */
+		/* ZS-Inspired Modern Corporate Design */
 
-		/* Mobile devices (up to 768px) */
-		@media screen and (max-width: 768px) {
-
-			/* Adjust navigation for mobile */
-			#nav ul.container {
-				padding: 0 10px;
-			}
-
-			#nav a {
-				font-size: 0.9em;
-				padding: 8px 12px;
-			}
-
-			/* Adjust main content spacing */
-			.wrapper {
-				padding: 2em 0;
-			}
-
-			/* Adjust button sizes */
-			.button.large {
-				padding: 12px 24px;
-				font-size: 1em;
-			}
-
-			/* Adjust image sizing */
-			.image.fit img {
-				max-width: 100%;
-				height: auto;
-			}
+		/* CSS Variables for consistent theming */
+		:root {
+			--primary-orange: #ff6b35;
+			--dark-gray: #2c2c2c;
+			--light-gray: #f8f9fa;
+			--text-dark: #333333;
+			--text-light: #666666;
+			--white: #ffffff;
+			--border-light: #e0e0e0;
+			--shadow-light: 0 2px 10px rgba(0, 0, 0, 0.1);
+			--shadow-medium: 0 4px 20px rgba(0, 0, 0, 0.15);
 		}
 
-		/* Tablet devices (768px to 1024px) */
-		@media screen and (min-width: 769px) and (max-width: 1024px) {
-			.wrapper {
-				padding: 3em 0;
-			}
-
-			.button.large {
-				padding: 14px 28px;
-				font-size: 1.1em;
-			}
+		/* Global Styles */
+		* {
+			box-sizing: border-box;
 		}
 
-		/* Large screens (1025px and above) */
-		@media screen and (min-width: 1025px) {
-			.wrapper {
-				padding: 4em 0;
-			}
-
-			.button.large {
-				padding: 18px 36px;
-				font-size: 1.3em;
-			}
+		body {
+			font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+			line-height: 1.6;
+			color: var(--text-dark);
+			background: linear-gradient(135deg, rgba(248, 249, 250, 0.3) 0%, rgba(255, 255, 255, 0.9) 100%),
+				url('images/mypict.jpg') center/cover fixed;
+			background-attachment: fixed;
+			margin: 0;
+			padding: 0;
 		}
 
-		/* Extra large screens (1440px and above) */
-		@media screen and (min-width: 1440px) {
-			.wrapper {
-				padding: 5em 0;
-			}
-
-			.button.large {
-				padding: 20px 40px;
-				font-size: 1.4em;
-			}
-
-			/* Enhanced typography for large screens */
-			h1 {
-				font-size: 2.8em;
-			}
-
-			h2 {
-				font-size: 2.2em;
-			}
-
-			h3 {
-				font-size: 1.6em;
-			}
+		/* Modern Header */
+		.modern-header {
+			background: var(--white);
+			box-shadow: var(--shadow-light);
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+			z-index: 1000;
+			padding: 0;
 		}
 
-		/* Additional responsive enhancements */
-
-		/* Small mobile devices (up to 480px) */
-		@media screen and (max-width: 480px) {
-			#nav a {
-				font-size: 0.8em;
-				padding: 6px 8px;
-			}
-
-			.wrapper {
-				padding: 1.5em 0;
-			}
-
-			.button.large {
-				padding: 10px 20px;
-				font-size: 0.9em;
-			}
-
-			h1 {
-				font-size: 1.6em;
-			}
-
-			h2 {
-				font-size: 1.3em;
-			}
-
-			h3 {
-				font-size: 1.1em;
-			}
-
-			/* Adjust image sizing for very small screens */
-			.image.fit img {
-				max-width: 100%;
-				height: auto;
-			}
-
-			/* Adjust form elements */
-			input[type="text"],
-			input[type="email"],
-			textarea {
-				font-size: 16px;
-				/* Prevents zoom on iOS */
-			}
+		.header-container {
+			max-width: 1200px;
+			margin: 0 auto;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 2rem;
+			height: 70px;
 		}
 
-		/* Landscape mobile devices */
-		@media screen and (max-width: 768px) and (orientation: landscape) {
-			.wrapper {
-				padding: 1.5em 0;
-			}
-
-			#nav {
-				position: fixed;
-				top: 0;
-				width: 100%;
-				z-index: 1000;
-			}
+		.logo {
+			display: flex;
+			align-items: center;
+			font-size: 1.5rem;
+			font-weight: 700;
+			color: var(--primary-orange);
+			text-decoration: none;
 		}
 
-		/* High DPI displays */
-		@media (-webkit-min-device-pixel-ratio: 2),
-		(min-resolution: 192dpi) {
-			.image.fit img {
-				image-rendering: -webkit-optimize-contrast;
-				image-rendering: crisp-edges;
-			}
+		.logo-bars {
+			display: flex;
+			margin-right: 0.5rem;
 		}
 
-		/* Professional styling for work cards */
-		.box.style1 a {
+		.logo-bar {
+			width: 4px;
+			height: 20px;
+			background: var(--primary-orange);
+			margin-right: 2px;
+			transform: skewY(-15deg);
+		}
+
+		.logo-bar:nth-child(2) {
+			background: #666;
+			height: 16px;
+		}
+
+		.logo-bar:nth-child(3) {
+			background: #999;
+			height: 12px;
+		}
+
+		/* Navigation */
+		.main-nav {
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+		}
+
+		.nav-item {
+			position: relative;
+		}
+
+		.nav-link {
+			text-decoration: none;
+			color: var(--text-dark);
+			font-weight: 500;
+			font-size: 0.95rem;
+			padding: 0.5rem 0;
+			transition: all 0.3s ease;
+			display: flex;
+			align-items: center;
+			gap: 0.25rem;
+			position: relative;
+		}
+
+		.nav-link::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			height: 3px;
+			background: var(--primary-orange);
+			transition: all 0.3s ease;
+			transform: translateX(-50%);
+		}
+
+		.nav-link:hover {
+			color: var(--text-dark);
+		}
+
+		.nav-item:hover .nav-link::after {
+			width: 100%;
+		}
+
+		.nav-link.active {
+			color: var(--text-dark);
+		}
+
+		.nav-link.active::after {
+			width: 100%;
+		}
+
+		.nav-arrow {
+			font-size: 0.8rem;
+			transition: transform 0.3s ease;
+		}
+
+		.nav-item:hover .nav-arrow {
+			transform: rotate(180deg);
+		}
+
+		/* Dropdown Menus */
+		.dropdown {
+			position: absolute;
+			top: 100%;
+			left: 0;
+			background: var(--white);
+			box-shadow: var(--shadow-medium);
+			border-radius: 8px;
+			padding: 2rem;
+			min-width: 600px;
+			opacity: 0;
+			visibility: hidden;
+			transform: translateY(-10px);
+			transition: all 0.3s ease;
+			z-index: 1001;
+		}
+
+		.nav-item:hover .dropdown {
+			opacity: 1;
+			visibility: visible;
+			transform: translateY(0);
+		}
+
+		.dropdown-content {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			gap: 2rem;
+		}
+
+		.dropdown-header h3 {
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin: 0 0 0.5rem 0;
+			color: var(--text-dark);
+		}
+
+		.dropdown-header p {
+			color: var(--text-light);
+			margin: 0 0 1rem 0;
+			font-size: 0.95rem;
+		}
+
+		.dropdown-link {
+			color: var(--primary-orange);
+			text-decoration: none;
+			font-weight: 500;
+			font-size: 0.9rem;
+		}
+
+		.dropdown-links {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+		}
+
+		.dropdown-link-item {
+			display: flex;
+			align-items: flex-start;
+			gap: 0.75rem;
+			padding: 0.75rem;
+			border-radius: 12px;
+			transition: all 0.3s ease;
 			text-decoration: none;
 			color: inherit;
+			position: relative;
+			border: 2px solid transparent;
+		}
+
+		.dropdown-link-item::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 3px;
+			background: var(--primary-orange);
+			transform: scaleX(0);
+			transition: transform 0.3s ease;
+			transform-origin: left;
+			border-radius: 12px 12px 0 0;
+		}
+
+		.dropdown-link-item:hover {
+			background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+			border: 2px solid var(--primary-orange);
+			transform: translateY(-2px);
+		}
+
+		.dropdown-link-item:hover::before {
+			transform: scaleX(1);
+		}
+
+		.dropdown-link-item:hover .dropdown-icon {
+			transform: scale(1.1);
+		}
+
+		.dropdown-link-item:hover h4 {
+			color: var(--primary-orange);
+		}
+
+		.dropdown-icon {
+			width: 20px;
+			height: 20px;
+			flex-shrink: 0;
+			margin-top: 0.1rem;
+			transition: transform 0.3s ease;
+		}
+
+		.dropdown-text h4 {
+			margin: 0 0 0.25rem 0;
+			font-size: 0.95rem;
+			font-weight: 600;
+			color: var(--text-dark);
+			transition: color 0.3s ease;
+		}
+
+		.dropdown-text p {
+			margin: 0;
+			font-size: 0.85rem;
+			color: var(--text-light);
+			line-height: 1.4;
+		}
+
+		/* Header Actions */
+		.header-actions {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.header-icon {
+			width: 20px;
+			height: 20px;
+			color: var(--text-light);
+			cursor: pointer;
+			transition: color 0.3s ease;
+		}
+
+		.header-icon:hover {
+			color: var(--primary-orange);
+		}
+
+		.contact-btn {
+			background: var(--primary-orange);
+			color: var(--white);
+			padding: 0.75rem 1.5rem;
+			border-radius: 6px;
+			text-decoration: none;
+			font-weight: 500;
+			font-size: 0.9rem;
 			transition: all 0.3s ease;
-			display: block;
+			position: relative;
+			overflow: hidden;
 		}
 
-		.box.style1 a:hover {
-			transform: translateY(-5px);
-			box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+		.contact-btn::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			height: 3px;
+			background: var(--white);
+			transition: all 0.3s ease;
+			transform: translateX(-50%);
 		}
 
-		.box.style1 a:hover h3 {
-			color: #e87a90;
+		.contact-btn:hover {
+			background: #e55a2b;
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
 		}
 
-		.box.style1 a:hover p {
-			color: #666;
+		.contact-btn:hover::after {
+			width: 80%;
 		}
 
-		.box.style1 a:hover::after {
-			content: "Click to learn more →";
-			display: block;
+		/* Hero Section */
+		.hero-section {
+			background: linear-gradient(135deg, rgba(248, 249, 250, 0.95) 0%, rgba(255, 255, 255, 0.9) 100%),
+				url('images/mypict.jpg') center/cover no-repeat;
+			padding: 8rem 0 4rem 0;
+			margin-top: 70px;
+			position: relative;
+		}
+
+		.hero-section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 255, 255, 0.8) 100%);
+			z-index: 1;
+		}
+
+		.hero-container {
+			position: relative;
+			z-index: 2;
+		}
+
+		.hero-container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 2rem;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 4rem;
+			align-items: center;
+		}
+
+		.hero-content h1 {
+			font-size: 3rem;
+			font-weight: 700;
+			margin: 0 0 1.5rem 0;
+			color: var(--text-dark);
+			line-height: 1.2;
+		}
+
+		.hero-content .highlight {
+			color: var(--primary-orange);
+		}
+
+		.hero-content p {
+			font-size: 1.1rem;
+			color: var(--text-light);
+			margin: 0 0 2rem 0;
+			line-height: 1.6;
+		}
+
+		.hero-cta {
+			display: flex;
+			gap: 1rem;
+		}
+
+		.btn-primary {
+			background: var(--primary-orange);
+			color: var(--white);
+			padding: 1rem 2rem;
+			border-radius: 8px;
+			text-decoration: none;
+			font-weight: 600;
+			font-size: 1rem;
+			transition: all 0.3s ease;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.5rem;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.btn-primary::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			height: 3px;
+			background: var(--white);
+			transition: all 0.3s ease;
+			transform: translateX(-50%);
+		}
+
+		.btn-primary:hover {
+			background: #e55a2b;
+			transform: translateY(-2px);
+			box-shadow: var(--shadow-medium);
+		}
+
+		.btn-primary:hover::after {
+			width: 80%;
+		}
+
+		.btn-secondary {
+			background: transparent;
+			color: var(--text-dark);
+			padding: 1rem 2rem;
+			border: 2px solid var(--border-light);
+			border-radius: 8px;
+			text-decoration: none;
+			font-weight: 600;
+			font-size: 1rem;
+			transition: all 0.3s ease;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.btn-secondary::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			height: 3px;
+			background: var(--primary-orange);
+			transition: all 0.3s ease;
+			transform: translateX(-50%);
+		}
+
+		.btn-secondary:hover {
+			border-color: var(--primary-orange);
+			color: var(--primary-orange);
+		}
+
+		.btn-secondary:hover::after {
+			width: 80%;
+		}
+
+		.hero-image {
 			text-align: center;
-			margin-top: 10px;
-			font-size: 0.9em;
-			color: #e87a90;
+		}
+
+		.hero-image img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 12px;
+			box-shadow: var(--shadow-medium);
+		}
+
+		/* Responsive Design */
+		@media (max-width: 768px) {
+			.header-container {
+				padding: 0 1rem;
+				height: 60px;
+			}
+
+			.main-nav {
+				display: none;
+			}
+
+			.hero-section {
+				padding: 6rem 0 3rem 0;
+			}
+
+			.hero-container {
+				grid-template-columns: 1fr;
+				gap: 2rem;
+				padding: 0 1rem;
+			}
+
+			.hero-content h1 {
+				font-size: 2rem;
+			}
+
+			.hero-cta {
+				flex-direction: column;
+			}
+
+			.dropdown {
+				min-width: 300px;
+				padding: 1rem;
+			}
+
+			.dropdown-content {
+				grid-template-columns: 1fr;
+				gap: 1rem;
+			}
+
+			.dropdown-links {
+				grid-template-columns: 1fr;
+			}
+		}
+
+		/* Hide original navigation */
+		#nav {
+			display: none;
+		}
+
+		/* Adjust body padding */
+		body {
+			padding-top: 0;
+		}
+
+		/* Work Section */
+		.work-section {
+			padding: 6rem 0;
+			background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%),
+				url('images/mypict.jpg') center/cover no-repeat;
+			position: relative;
+		}
+
+		.work-section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(255, 255, 255, 0.8);
+			z-index: 1;
+		}
+
+		.work-container {
+			position: relative;
+			z-index: 2;
+		}
+
+		.work-container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 2rem;
+		}
+
+		.work-header {
+			text-align: center;
+			margin-bottom: 4rem;
+		}
+
+		.work-header h2 {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin: 0 0 1rem 0;
+			color: var(--text-dark);
+		}
+
+		.work-header p {
+			font-size: 1.1rem;
+			color: var(--text-light);
+			margin: 0;
+		}
+
+		.work-grid {
+			display: grid;
+			grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+			gap: 2rem;
+			margin-bottom: 4rem;
+		}
+
+		.work-card {
+			background: var(--white);
+			border-radius: 12px;
+			box-shadow: var(--shadow-light);
+			transition: all 0.3s ease;
+			overflow: visible;
+			position: relative;
+			border: 2px solid transparent;
+		}
+
+		.work-card::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			height: 4px;
+			background: var(--primary-orange);
+			transform: scaleX(0);
+			transition: transform 0.3s ease;
+			transform-origin: left;
+		}
+
+		.work-card:hover {
+			transform: translateY(-8px);
+			box-shadow: var(--shadow-medium);
+			border: 2px solid var(--primary-orange);
+			background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(255, 107, 53, 0.05) 100%);
+		}
+
+		.work-card:hover::before {
+			transform: scaleX(1);
+		}
+
+		.work-card:hover .work-icon {
+			transform: scale(1.1);
+		}
+
+		.work-card:hover h3 {
+			color: var(--primary-orange);
+		}
+
+		.work-card-link {
+			display: flex;
+			flex-direction: column;
+			padding: 2rem;
+			text-decoration: none;
+			color: inherit;
+			height: 100%;
+		}
+
+		.work-icon {
+			font-size: 2.5rem;
+			margin-bottom: 1rem;
+			transition: transform 0.3s ease;
+		}
+
+		.work-card h3 {
+			font-size: 1.3rem;
+			font-weight: 600;
+			margin: 0 0 1rem 0;
+			color: var(--text-dark);
+			transition: color 0.3s ease;
+		}
+
+		.work-card p {
+			color: var(--text-light);
+			line-height: 1.6;
+			margin: 0 0 1.5rem 0;
+		}
+
+		.work-card-cta {
+			color: var(--primary-orange);
+			font-weight: 600;
+			font-size: 0.95rem;
+			margin-top: auto;
+			transition: all 0.3s ease;
+			position: relative;
+		}
+
+		.work-card-cta::after {
+			content: '';
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: var(--primary-orange);
+			transition: width 0.3s ease;
+		}
+
+		.work-card:hover .work-card-cta::after {
+			width: 100%;
+		}
+
+		.work-footer {
+			text-align: center;
+		}
+
+		.work-footer p {
+			color: var(--text-light);
+			margin: 0 0 2rem 0;
+			font-size: 1rem;
+		}
+
+		/* Resume Section */
+		.resume-section {
+			padding: 6rem 0;
+			background: linear-gradient(135deg, rgba(248, 249, 250, 0.9) 0%, rgba(255, 255, 255, 0.95) 100%),
+				url('images/mypict.jpg') center/cover no-repeat;
+			position: relative;
+		}
+
+		.resume-section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(248, 249, 250, 0.7);
+			z-index: 1;
+		}
+
+		.resume-container {
+			position: relative;
+			z-index: 2;
+		}
+
+		.resume-container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 0 2rem;
+		}
+
+		.resume-header {
+			text-align: center;
+			margin-bottom: 3rem;
+		}
+
+		.resume-header h2 {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin: 0 0 1rem 0;
+			color: var(--text-dark);
+		}
+
+		.resume-header p {
+			font-size: 1.1rem;
+			color: var(--text-light);
+			margin: 0;
+		}
+
+		.resume-card {
+			background: var(--white);
+			border-radius: 12px;
+			box-shadow: var(--shadow-light);
+			padding: 3rem;
+			text-align: center;
+			max-width: 600px;
+			margin: 0 auto;
+		}
+
+		.resume-icon {
+			font-size: 3rem;
+			margin-bottom: 1.5rem;
+		}
+
+		.resume-card h3 {
+			font-size: 1.5rem;
+			font-weight: 600;
+			margin: 0 0 1rem 0;
+			color: var(--text-dark);
+		}
+
+		.resume-card p {
+			color: var(--text-light);
+			margin: 0 0 2rem 0;
+		}
+
+		.resume-actions {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+		}
+
+		/* Contact Section */
+		.contact-section {
+			padding: 6rem 0;
+			background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(248, 249, 250, 0.9) 100%),
+				url('images/mypict.jpg') center/cover no-repeat;
+			position: relative;
+		}
+
+		.contact-section::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: rgba(255, 255, 255, 0.8);
+			z-index: 1;
+		}
+
+		.contact-container {
+			position: relative;
+			z-index: 2;
+		}
+
+		.contact-container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 0 2rem;
+		}
+
+		.contact-header {
+			text-align: center;
+			margin-bottom: 3rem;
+		}
+
+		.contact-header h2 {
+			font-size: 2.5rem;
+			font-weight: 700;
+			margin: 0 0 1rem 0;
+			color: var(--text-dark);
+		}
+
+		.contact-header p {
+			font-size: 1.1rem;
+			color: var(--text-light);
+			margin: 0;
+		}
+
+		.contact-form {
+			background: var(--light-gray);
+			padding: 3rem;
+			border-radius: 12px;
+			margin-bottom: 3rem;
+		}
+
+		.form-group {
+			margin-bottom: 1.5rem;
+		}
+
+		.form-row {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 1rem;
+		}
+
+		.form-input {
+			width: 100%;
+			padding: 1rem;
+			border: 2px solid var(--border-light);
+			border-radius: 8px;
+			font-size: 1rem;
+			font-family: inherit;
+			transition: border-color 0.3s ease;
+		}
+
+		.form-input:focus {
+			outline: none;
+			border-color: var(--primary-orange);
+		}
+
+		.form-textarea {
+			width: 100%;
+			padding: 1rem;
+			border: 2px solid var(--border-light);
+			border-radius: 8px;
+			font-size: 1rem;
+			font-family: inherit;
+			resize: vertical;
+			min-height: 120px;
+			transition: border-color 0.3s ease;
+		}
+
+		.form-textarea:focus {
+			outline: none;
+			border-color: var(--primary-orange);
+		}
+
+		.form-actions {
+			display: flex;
+			gap: 1rem;
+			justify-content: center;
+		}
+
+		.btn-submit {
+			background: var(--primary-orange);
+			color: var(--white);
+			padding: 1rem 2rem;
+			border: none;
+			border-radius: 8px;
+			font-weight: 600;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.btn-submit::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			height: 3px;
+			background: var(--white);
+			transition: all 0.3s ease;
+			transform: translateX(-50%);
+		}
+
+		.btn-submit:hover {
+			background: #e55a2b;
+			transform: translateY(-2px);
+			box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+		}
+
+		.btn-submit:hover::after {
+			width: 80%;
+		}
+
+		.btn-reset {
+			background: transparent;
+			color: var(--text-dark);
+			padding: 1rem 2rem;
+			border: 2px solid var(--border-light);
+			border-radius: 8px;
+			font-weight: 600;
+			font-size: 1rem;
+			cursor: pointer;
+			transition: all 0.3s ease;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.btn-reset::after {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			height: 3px;
+			background: var(--primary-orange);
+			transition: all 0.3s ease;
+			transform: translateX(-50%);
+		}
+
+		.btn-reset:hover {
+			border-color: var(--primary-orange);
+			color: var(--primary-orange);
+		}
+
+		.btn-reset:hover::after {
+			width: 80%;
+		}
+
+		/* Form Messages */
+		.form-messages {
+			margin-top: 2rem;
+			padding: 1rem;
+			border-radius: 8px;
+			text-align: center;
+		}
+
+		.success-message {
+			background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+			color: #155724;
+			border: 1px solid #c3e6cb;
+			padding: 1.5rem;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.error-message {
+			background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+			color: #721c24;
+			border: 1px solid #f5c6cb;
+			padding: 1.5rem;
+			border-radius: 8px;
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+		}
+
+		.message-icon {
+			font-size: 1.5rem;
+			font-weight: bold;
+		}
+
+		.success-message .message-icon {
+			color: #28a745;
+		}
+
+		.error-message .message-icon {
+			color: #dc3545;
+		}
+
+		.form-messages p {
+			margin: 0;
 			font-weight: 500;
 		}
 
-		/* Responsive adjustments for work cards */
-		@media screen and (max-width: 768px) {
-			.box.style1 a:hover {
-				transform: translateY(-3px);
-			}
-
-			.box.style1 a:hover::after {
-				font-size: 0.8em;
-				margin-top: 8px;
-			}
+		/* Google Form Styling */
+		.google-form-container {
+			background: rgba(255, 255, 255, 0.95);
+			border-radius: 12px;
+			padding: 2rem;
+			box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+			backdrop-filter: blur(10px);
+			border: 1px solid rgba(255, 255, 255, 0.2);
+			margin-bottom: 2rem;
 		}
 
-		@media screen and (min-width: 769px) and (max-width: 1024px) {
-			.box.style1 a:hover {
-				transform: translateY(-4px);
+		.google-form-iframe {
+			border-radius: 8px;
+			box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+		}
+
+		.form-alternative {
+			text-align: center;
+			padding: 1.5rem;
+			background: rgba(255, 255, 255, 0.9);
+			border-radius: 8px;
+			border: 2px dashed var(--primary-orange);
+		}
+
+		.form-alternative p {
+			margin: 0;
+			color: var(--text-dark);
+			font-size: 1rem;
+		}
+
+		.form-link {
+			color: var(--primary-orange);
+			text-decoration: none;
+			font-weight: 600;
+			position: relative;
+			transition: all 0.3s ease;
+		}
+
+		.form-link::after {
+			content: '';
+			position: absolute;
+			bottom: -2px;
+			left: 0;
+			width: 0;
+			height: 2px;
+			background: var(--primary-orange);
+			transition: all 0.3s ease;
+		}
+
+		.form-link:hover::after {
+			width: 100%;
+		}
+
+		.form-link:hover {
+			color: #e67e00;
+		}
+
+		.social-links {
+			text-align: center;
+			padding: 2rem 0;
+		}
+
+		.social-links h3 {
+			font-size: 1.3rem;
+			font-weight: 600;
+			margin: 0 0 1.5rem 0;
+			color: var(--text-dark);
+		}
+
+		.social-list {
+			display: flex;
+			justify-content: center;
+			gap: 1rem;
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		.social-link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 50px;
+			height: 50px;
+			background: var(--light-gray);
+			border-radius: 50%;
+			color: var(--text-light);
+			text-decoration: none;
+			transition: all 0.3s ease;
+		}
+
+		.social-link:hover {
+			background: var(--primary-orange);
+			color: var(--white);
+			transform: translateY(-2px);
+		}
+
+		.footer {
+			background: var(--dark-gray);
+			color: var(--white);
+			text-align: center;
+			padding: 2rem 0;
+		}
+
+		.footer p {
+			margin: 0;
+			font-size: 0.9rem;
+		}
+
+		.footer a {
+			color: var(--primary-orange);
+			text-decoration: none;
+		}
+
+		/* Responsive adjustments for new sections */
+		@media (max-width: 768px) {
+			.work-grid {
+				grid-template-columns: 1fr;
+				gap: 1.5rem;
+			}
+
+			.work-header h2 {
+				font-size: 2rem;
+			}
+
+			.resume-header h2,
+			.contact-header h2 {
+				font-size: 2rem;
+			}
+
+			.form-row {
+				grid-template-columns: 1fr;
+			}
+
+			.resume-actions,
+			.form-actions {
+				flex-direction: column;
+			}
+
+			.social-list {
+				flex-wrap: wrap;
 			}
 		}
 	</style>
@@ -215,228 +1143,268 @@
 
 <body class="is-preload">
 
-	<!-- Nav -->
-	<nav id="nav">
-		<ul class="container">
-			<li><a href="#top">Top</a></li>
-			<li><a href="mywork.html">My Work</a></li>
-			<li><a href="mystory.html">My Story</a></li>
-			<li><a href="resume.html">MyResume</a></li>
-			<li><a href="#contact">Contact</a></li>
+	<!-- Modern Header -->
+	<header class="modern-header">
+		<div class="header-container">
+			<a href="#top" class="logo">
+				<div class="logo-bars">
+					<div class="logo-bar"></div>
+					<div class="logo-bar"></div>
+					<div class="logo-bar"></div>
+				</div>
+				AK
+			</a>
 
-		</ul>
-	</nav>
-
-	<!-- Home -->
-	<article id="top" class="wrapper style1">
-		<div class="container">
-			<div class="row">
-				<div class="col-4 col-5-large col-12-medium">
-					<span class="image fit"><img src="images/mypict.jpg" alt="" /></span>
-				</div>
-				<div class="col-8 col-7-large col-12-medium">
-					<header>
-						<h1>Hi. I'm <strong>Ange K. kouadio</strong>.</h1>
-					</header>
-					<p>I'm a <strong>data scientist</strong>, <strong>mathematician</strong>, and <strong>actuarial
-							scientist</strong>
-						passionate about extracting insights from data. I am interested in working in financial
-						services, marketing, healthcare,
-						and other data-driven fields.
-						As a <strong>fast learner</strong> and <strong>book craver</strong>, I bring curiosity and
-						determination
-						to every project. I value collaboration, mentorship, and feedback as stepping stones to
-						excellence.
-					</p>
-					<a href="#work" class="button large scrolly">Learn about what I do</a>
-				</div>
-			</div>
-		</div>
-	</article>
-
-	<!-- My Work -->
-	<article id="work" class="wrapper style2">
-		<div class="container">
-			<header>
-				<h2>Here's all the stuff I do.</h2>
-				<p>Explore my projects and professional work across different domains</p>
-			</header>
-			<div class="row aln-center">
-				<div class="col-4 col-6-medium col-12-small">
-					<section class="box style1">
-						<a href="mywork.html#data-science-projects">
-							<span class="icon featured fa-chart-line"></span>
-							<h3>Data Science Projects</h3>
-							<p>Machine Learning Models<br>
-								Predictive Analytics<br>
-								Statistical Analysis<br>
-								Data Visualization</p>
-						</a>
-					</section>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<section class="box style1">
-						<a href="mywork.html#actuarial-projects">
-							<span class="icon solid featured fa-calculator"></span>
-							<h3>Actuarial Projects</h3>
-							<p>Risk Assessment Models<br>
-								Mortality Analysis<br>
-								Premium Pricing<br>
-								Financial Modeling</p>
-						</a>
-					</section>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<section class="box style1">
-						<a href="mywork.html#healthcare-analytics">
-							<span class="icon featured fa-heartbeat"></span>
-							<h3>Healthcare Analytics</h3>
-							<p>Patient Outcome Analysis<br>
-								Clinical Decision Support<br>
-								Resource Optimization<br>
-								Quality Metrics</p>
-						</a>
-					</section>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<section class="box style1">
-						<a href="mywork.html#financial-analytics">
-							<span class="icon solid featured fa-chart-bar"></span>
-							<h3>Financial Analytics</h3>
-							<p>Fraud Detection<br>
-								Credit Risk Modeling<br>
-								Investment Analysis<br>
-								Market Forecasting</p>
-						</a>
-					</section>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<section class="box style1">
-						<a href="mywork.html#marketing-analytics">
-							<span class="icon featured fa-bullhorn"></span>
-							<h3>Marketing Analytics</h3>
-							<p>Customer Segmentation<br>
-								Campaign Optimization<br>
-								Churn Prediction<br>
-								ROI Analysis</p>
-						</a>
-					</section>
-				</div>
-				<div class="col-4 col-6-medium col-12-small">
-					<section class="box style1">
-						<a href="mywork.html#research-projects">
-							<span class="icon solid featured fa-microscope"></span>
-							<h3>Research Projects</h3>
-							<p>Academic Publications<br>
-								Methodology Development<br>
-								Algorithm Optimization<br>
-								Industry Applications</p>
-						</a>
-					</section>
-				</div>
-			</div>
-			<footer>
-				<p>Click on any category above to explore detailed projects, or view all my work</p>
-				<a href="mywork.html" class="button large scrolly">View All My Work</a>
-			</footer>
-		</div>
-	</article>
-
-
-
-	<!-- Resume -->
-	<article id="MyResume" class="wrapper style2">
-		<div class="container">
-			<header>
-				<h2>My Resume</h2>
-				<p>Click below to view my resume online or download the PDF version</p>
-			</header>
-			<div class="row aln-center">
-				<div class="col-6 col-12-medium">
-					<section class="box style1">
-						<span class="icon featured fa-file-pdf"></span>
-						<h3>Resume</h3>
-						<p>Professional experience, skills, and qualifications</p>
-						<a href="resume.html" class="button large">
-							<span class="icon solid fa-eye"></span>
-							View Resume Online
-						</a>
-						<a href="images/MyResume.pdf" class="button large" style="margin-top: 10px;">
-							<span class="icon solid fa-download"></span>
-							Download PDF
-						</a>
-					</section>
-				</div>
-			</div>
-		</div>
-	</article>
-
-	<!-- Contact -->
-	<article id="contact" class="wrapper style4">
-		<div class="container medium">
-			<header>
-				<h2>Have me make stuff for you.</h2>
-				<p>Ornare nulla proin odio consequat sapien vestibulum ipsum.</p>
-			</header>
-			<div class="row">
-				<div class="col-12">
-					<form method="post" action="#">
-						<div class="row">
-							<div class="col-6 col-12-small">
-								<input type="text" name="name" id="name" placeholder="Name" />
+			<nav class="main-nav">
+				<div class="nav-item">
+					<a href="#work" class="nav-link">
+						My Work
+						<span class="nav-arrow">▼</span>
+					</a>
+					<div class="dropdown">
+						<div class="dropdown-content">
+							<div class="dropdown-header">
+								<h3>My Work</h3>
+								<p>Explore my projects and professional work across different domains</p>
+								<a href="mywork.html" class="dropdown-link">See overview</a>
 							</div>
-							<div class="col-6 col-12-small">
-								<input type="text" name="email" id="email" placeholder="Email" />
-							</div>
-							<div class="col-12">
-								<input type="text" name="subject" id="subject" placeholder="Subject" />
-							</div>
-							<div class="col-12">
-								<textarea name="message" id="message" placeholder="Message"></textarea>
-							</div>
-							<div class="col-12">
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-									<li><input type="reset" value="Clear Form" class="alt" /></li>
-								</ul>
+							<div class="dropdown-links">
+								<a href="mywork.html#data-science-projects" class="dropdown-link-item">
+									<div class="dropdown-icon">📊</div>
+									<div class="dropdown-text">
+										<h4>Data Science Projects</h4>
+										<p>Machine Learning Models and Predictive Analytics</p>
+									</div>
+								</a>
+								<a href="mywork.html#actuarial-projects" class="dropdown-link-item">
+									<div class="dropdown-icon">🧮</div>
+									<div class="dropdown-text">
+										<h4>Actuarial Projects</h4>
+										<p>Risk Assessment and Financial Modeling</p>
+									</div>
+								</a>
+								<a href="mywork.html#healthcare-analytics" class="dropdown-link-item">
+									<div class="dropdown-icon">🏥</div>
+									<div class="dropdown-text">
+										<h4>Healthcare Analytics</h4>
+										<p>Patient Outcome Analysis and Clinical Support</p>
+									</div>
+								</a>
+								<a href="mywork.html#financial-analytics" class="dropdown-link-item">
+									<div class="dropdown-icon">💰</div>
+									<div class="dropdown-text">
+										<h4>Financial Analytics</h4>
+										<p>Fraud Detection and Credit Risk Modeling</p>
+									</div>
+								</a>
 							</div>
 						</div>
-					</form>
+					</div>
 				</div>
-				<div class="col-12">
-					<hr />
-					<h3>Find me on ...</h3>
-					<ul class="social">
-						<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
-						<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">LinkedIn</span></a></li>
-						<li><a href="#" class="icon brands fa-tumblr"><span class="label">Tumblr</span></a></li>
-						<li><a href="#" class="icon brands fa-google-plus"><span class="label">Google+</span></a></li>
-						<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-						<!--
-								<li><a href="#" class="icon solid fa-rss"><span>RSS</span></a></li>
-								<li><a href="#" class="icon brands fa-instagram"><span>Instagram</span></a></li>
-								<li><a href="#" class="icon brands fa-foursquare"><span>Foursquare</span></a></li>
-								<li><a href="#" class="icon brands fa-skype"><span>Skype</span></a></li>
-								<li><a href="#" class="icon brands fa-soundcloud"><span>Soundcloud</span></a></li>
-								<li><a href="#" class="icon brands fa-youtube"><span>YouTube</span></a></li>
-								<li><a href="#" class="icon brands fa-blogger"><span>Blogger</span></a></li>
-								<li><a href="#" class="icon brands fa-flickr"><span>Flickr</span></a></li>
-								<li><a href="#" class="icon brands fa-vimeo"><span>Vimeo</span></a></li>
-								-->
-					</ul>
-					<hr />
+
+				<div class="nav-item">
+					<a href="mystory.html" class="nav-link">My Story</a>
+				</div>
+
+				<div class="nav-item">
+					<a href="resume.html" class="nav-link">Resume</a>
+				</div>
+			</nav>
+
+			<div class="header-actions">
+				<svg class="header-icon" fill="currentColor" viewBox="0 0 20 20">
+					<path fill-rule="evenodd"
+						d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+						clip-rule="evenodd"></path>
+				</svg>
+				<a href="#contact" class="contact-btn">Contact me</a>
+			</div>
+		</div>
+	</header>
+
+	<!-- Hero Section -->
+	<section class="hero-section" id="top">
+		<div class="hero-container">
+			<div class="hero-content">
+				<h1>Hi. I'm <span class="highlight">Ange K. Kouadio</span>.</h1>
+				<p>I'm a <strong>data scientist</strong>, <strong>mathematician</strong>, and <strong>actuarial
+						scientist</strong> passionate about extracting insights from data. I am interested in working in
+					financial services, marketing, healthcare, and other data-driven fields.</p>
+				<p>As a <strong>fast learner</strong> and <strong>book craver</strong>, I bring curiosity and
+					determination to every project. I value collaboration, mentorship, and feedback as stepping stones
+					to excellence.</p>
+				<div class="hero-cta">
+					<a href="#work" class="btn-primary">
+						Learn about what I do
+						<span>→</span>
+					</a>
+					<a href="resume.html" class="btn-secondary">View Resume</a>
 				</div>
 			</div>
-			<footer>
-				<ul id="copyright">
-					<li>&copy; Untitled. All rights reserved.</li>
-					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</footer>
+			<div class="hero-image">
+				<img src="images/mypict.jpg" alt="Ange K. Kouadio - Data Scientist" />
+			</div>
 		</div>
-	</article>
+	</section>
+
+	<!-- My Work Section -->
+	<section id="work" class="work-section">
+		<div class="work-container">
+			<div class="work-header">
+				<h2>Here's all the stuff I do.</h2>
+				<p>Explore my projects and professional work across different domains</p>
+			</div>
+
+			<div class="work-grid">
+				<div class="work-card">
+					<a href="mywork.html#data-science-projects" class="work-card-link">
+						<div class="work-icon">📊</div>
+						<h3>Data Science Projects</h3>
+						<p>Machine Learning Models<br>
+							Predictive Analytics<br>
+							Statistical Analysis<br>
+							Data Visualization</p>
+						<div class="work-card-cta">Click to learn more →</div>
+					</a>
+				</div>
+
+				<div class="work-card">
+					<a href="mywork.html#actuarial-projects" class="work-card-link">
+						<div class="work-icon">🧮</div>
+						<h3>Actuarial Projects</h3>
+						<p>Risk Assessment Models<br>
+							Mortality Analysis<br>
+							Premium Pricing<br>
+							Financial Modeling</p>
+						<div class="work-card-cta">Click to learn more →</div>
+					</a>
+				</div>
+
+				<div class="work-card">
+					<a href="mywork.html#healthcare-analytics" class="work-card-link">
+						<div class="work-icon">🏥</div>
+						<h3>Healthcare Analytics</h3>
+						<p>Patient Outcome Analysis<br>
+							Clinical Decision Support<br>
+							Resource Optimization<br>
+							Quality Metrics</p>
+						<div class="work-card-cta">Click to learn more →</div>
+					</a>
+				</div>
+
+				<div class="work-card">
+					<a href="mywork.html#financial-analytics" class="work-card-link">
+						<div class="work-icon">💰</div>
+						<h3>Financial Analytics</h3>
+						<p>Fraud Detection<br>
+							Credit Risk Modeling<br>
+							Investment Analysis<br>
+							Market Forecasting</p>
+						<div class="work-card-cta">Click to learn more →</div>
+					</a>
+				</div>
+
+				<div class="work-card">
+					<a href="mywork.html#marketing-analytics" class="work-card-link">
+						<div class="work-icon">📢</div>
+						<h3>Marketing Analytics</h3>
+						<p>Customer Segmentation<br>
+							Campaign Optimization<br>
+							Churn Prediction<br>
+							ROI Analysis</p>
+						<div class="work-card-cta">Click to learn more →</div>
+					</a>
+				</div>
+
+				<div class="work-card">
+					<a href="mywork.html#research-projects" class="work-card-link">
+						<div class="work-icon">🔬</div>
+						<h3>Research Projects</h3>
+						<p>Academic Publications<br>
+							Methodology Development<br>
+							Algorithm Optimization<br>
+							Industry Applications</p>
+						<div class="work-card-cta">Click to learn more →</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="work-footer">
+				<p>Click on any category above to explore detailed projects, or view all my work</p>
+				<a href="mywork.html" class="btn-primary">View All My Work</a>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- Resume Section -->
+	<section id="MyResume" class="resume-section">
+		<div class="resume-container">
+			<div class="resume-header">
+				<h2>My Resume</h2>
+				<p>Click below to view my resume online or download the PDF version</p>
+			</div>
+
+			<div class="resume-card">
+				<div class="resume-icon">📄</div>
+				<h3>Resume</h3>
+				<p>Professional experience, skills, and qualifications</p>
+				<div class="resume-actions">
+					<a href="resume.html" class="btn-primary">
+						👁️ View Resume Online
+					</a>
+					<a href="images/MyResume.pdf" class="btn-secondary">
+						⬇️ Download PDF
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Contact Section -->
+	<section id="contact" class="contact-section">
+		<div class="contact-container">
+			<div class="contact-header">
+				<h2>Have me make stuff for you.</h2>
+				<p>Let's collaborate on your next data-driven project</p>
+			</div>
+
+			<div class="contact-form">
+				<!-- Google Form Integration -->
+				<div class="google-form-container">
+					<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdYOUR_FORM_ID_HERE/viewform?embedded=true"
+						width="100%" height="600" frameborder="0" marginheight="0" marginwidth="0"
+						class="google-form-iframe">
+						Loading…
+					</iframe>
+				</div>
+
+				<!-- Alternative: Direct Link Button -->
+				<div class="form-alternative">
+					<p>Having trouble with the form above? <a
+							href="https://docs.google.com/forms/d/e/1FAIpQLSdYOUR_FORM_ID_HERE/viewform" target="_blank"
+							class="form-link">Click here to open in a new tab</a></p>
+				</div>
+			</div>
+
+			<div class="social-links">
+				<h3>Find me on ...</h3>
+				<ul class="social-list">
+					<li><a href="#" class="social-link">🐦</a></li>
+					<li><a href="#" class="social-link">📘</a></li>
+					<li><a href="#" class="social-link">💼</a></li>
+					<li><a href="#" class="social-link">🐙</a></li>
+					<li><a href="#" class="social-link">📧</a></li>
+				</ul>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="footer">
+		<p>&copy; 2024 Ange K. Kouadio. All rights reserved. | Design inspired by modern corporate websites</p>
+	</footer>
 
 	<!-- Scripts -->
 	<script src="assets/js/jquery.min.js"></script>
@@ -445,6 +1413,7 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
+
 
 </body>
 
