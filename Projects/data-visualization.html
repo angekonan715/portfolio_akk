@@ -241,6 +241,24 @@
             transition: transform 0.3s ease;
         }
 
+        .box.style2 .icon.featured,
+        .box.style2 .icon.solid.featured {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box.style2 .icon.featured img,
+        .box.style2 .icon.solid.featured img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: hue-rotate(15deg) saturate(1.2) brightness(1.1);
+        }
+
         .box.style2:hover h3 {
             color: var(--primary-orange);
         }
@@ -430,7 +448,9 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon featured fa-chart-pie"></span>
+                            <span class="icon featured">
+                                <img src="../images/icons/datavisualizationicon.png" alt="Tableau Dashboard" />
+                            </span>
                             <h3>Tableau Sales Dashboard</h3>
                             <p><strong>Technology:</strong> Tableau, SQL<br>
                                 <strong>Features:</strong> Interactive Filters, Drill-down<br>
@@ -443,7 +463,9 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon solid featured fa-chart-bar"></span>
+                            <span class="icon solid featured">
+                                <img src="../images/icons/datavisualizationicon.png" alt="PowerBI Report" />
+                            </span>
                             <h3>PowerBI Financial Report</h3>
                             <p><strong>Technology:</strong> PowerBI, DAX<br>
                                 <strong>Features:</strong> Real-time data, Mobile responsive<br>
@@ -456,7 +478,9 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon featured fa-chart-line"></span>
+                            <span class="icon featured">
+                                <img src="../images/icons/datavisualizationicon.png" alt="Looker Studio" />
+                            </span>
                             <h3>Looker Studio Analytics</h3>
                             <p><strong>Technology:</strong> Looker Studio, BigQuery<br>
                                 <strong>Features:</strong> Custom metrics, Automated reports<br>
@@ -469,7 +493,9 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon solid featured fa-chart-area"></span>
+                            <span class="icon solid featured">
+                                <img src="../images/icons/datavisualizationicon.png" alt="R Visualizations" />
+                            </span>
                             <h3>R Statistical Visualizations</h3>
                             <p><strong>Technology:</strong> R, ggplot2, Shiny<br>
                                 <strong>Features:</strong> Statistical plots, Interactive apps<br>

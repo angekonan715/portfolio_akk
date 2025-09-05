@@ -255,6 +255,24 @@
             transition: transform 0.3s ease;
         }
 
+        .box.style1 .icon.featured,
+        .box.style1 .icon.solid.featured {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box.style1 .icon.featured img,
+        .box.style1 .icon.solid.featured img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: hue-rotate(15deg) saturate(1.2) brightness(1.1);
+        }
+
         .box.style1 a:hover::after {
             content: "Click to learn more →";
             display: block;
@@ -457,7 +475,9 @@
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
                         <a href="Projects/machine-learning.html">
-                            <span class="icon featured fa-brain"></span>
+                            <span class="icon featured">
+                                <img src="images/icons/datascienceicon.png" alt="Machine Learning" />
+                            </span>
                             <h3>Machine Learning</h3>
                             <p>Logistic Regression<br>
                                 Predictive Models<br>
@@ -469,7 +489,9 @@
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
                         <a href="Projects/r-statistics.html">
-                            <span class="icon solid featured fa-chart-line"></span>
+                            <span class="icon solid featured">
+                                <img src="images/icons/statsicon.png" alt="R & Statistics" />
+                            </span>
                             <h3>R & Statistics</h3>
                             <p>Chi-Square Analysis<br>
                                 Statistical Modeling<br>
@@ -481,7 +503,9 @@
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
                         <a href="Projects/data-visualization.html">
-                            <span class="icon featured fa-chart-pie"></span>
+                            <span class="icon featured">
+                                <img src="images/icons/datavisualizationicon.png" alt="Data Visualization" />
+                            </span>
                             <h3>Data Visualization</h3>
                             <p>Tableau Dashboards<br>
                                 PowerBI Reports<br>
@@ -493,7 +517,9 @@
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
                         <a href="Projects/sql.html">
-                            <span class="icon solid featured fa-database"></span>
+                            <span class="icon solid featured">
+                                <img src="images/icons/exploratoryanalysisicon.png" alt="SQL" />
+                            </span>
                             <h3>SQL</h3>
                             <p>Database Queries<br>
                                 Data Extraction<br>
@@ -505,7 +531,9 @@
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
                         <a href="Projects/actuarial-science.html">
-                            <span class="icon solid featured fa-calculator"></span>
+                            <span class="icon solid featured">
+                                <img src="images/icons/actuaryicon.png" alt="Actuarial Science" />
+                            </span>
                             <h3>Actuarial Science</h3>
                             <p>Pricing Models<br>
                                 Financial Mathematics<br>
@@ -517,7 +545,9 @@
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
                         <a href="Projects/case-studies.html">
-                            <span class="icon solid featured fa-trophy"></span>
+                            <span class="icon solid featured">
+                                <img src="images/icons/casecompetitionicon.png" alt="Case Studies" />
+                            </span>
                             <h3>Case Studies & Hackathon</h3>
                             <p>Competition Projects<br>
                                 Real-world Solutions<br>

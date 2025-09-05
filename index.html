@@ -390,8 +390,10 @@
 			height: 350px;
 			border-radius: 12px;
 			object-fit: cover;
-			object-position: center top;
+			object-position: center 20%;
 			box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+			border: 3px solid rgba(255, 255, 255, 0.8);
+			filter: brightness(1.05) contrast(1.1);
 		}
 
 		.profile-info {
@@ -415,7 +417,9 @@
 
 		.profile-roles {
 			display: flex;
-			gap: 2rem;
+			gap: 2.5rem;
+			justify-content: center;
+			align-items: center;
 		}
 
 		.role-item {
@@ -423,17 +427,38 @@
 			flex-direction: column;
 			align-items: center;
 			text-align: center;
+			padding: 0.5rem;
+			transition: all 0.3s ease;
+			min-width: 120px;
+			text-decoration: none;
+			border-radius: 8px;
+		}
+
+		.role-item:hover {
+			transform: translateY(-3px);
 		}
 
 		.role-icon {
-			font-size: 2.5rem;
-			margin-bottom: 0.5rem;
+			margin-bottom: 0.8rem;
+			width: 60px;
+			height: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.role-icon img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			filter: hue-rotate(15deg) saturate(1.2) brightness(1.1);
 		}
 
 		.role-label {
-			font-size: 1rem;
+			font-size: 0.95rem;
 			font-weight: 600;
 			color: #2c5aa0;
+			letter-spacing: 0.5px;
 		}
 
 		.profile-actions {
@@ -778,6 +803,19 @@
 			font-size: 2.5rem;
 			margin-bottom: 1rem;
 			transition: transform 0.3s ease;
+			width: 60px;
+			height: 60px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			margin: 0 auto 1rem auto;
+		}
+
+		.work-icon img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			filter: hue-rotate(15deg) saturate(1.2) brightness(1.1);
 		}
 
 		.work-card h3 {
@@ -1495,11 +1533,21 @@
 			.profile-roles {
 				justify-content: center;
 				flex-wrap: wrap;
-				gap: 1rem;
+				gap: 1.5rem;
 			}
 
 			.role-item {
-				min-width: 120px;
+				min-width: 100px;
+				padding: 0.5rem;
+			}
+
+			.role-icon {
+				width: 50px;
+				height: 50px;
+			}
+
+			.role-label {
+				font-size: 0.85rem;
 			}
 
 			.profile-title {
@@ -1602,22 +1650,30 @@
 					<div class="profile-name">Ange K. Kouadio</div>
 					<div class="profile-title">Data Scientist</div>
 					<div class="profile-roles">
-						<div class="role-item">
-							<div class="role-icon">🧠</div>
+						<a href="#work" class="role-item">
+							<div class="role-icon">
+								<img src="images/icons/datascienceicon.png" alt="Data Science" />
+							</div>
 							<div class="role-label">Data Scientist</div>
-						</div>
-						<div class="role-item">
-							<div class="role-icon">📊</div>
+						</a>
+						<a href="#work" class="role-item">
+							<div class="role-icon">
+								<img src="images/icons/statsicon.png" alt="Statistics" />
+							</div>
 							<div class="role-label">Statistician</div>
-						</div>
-						<div class="role-item">
-							<div class="role-icon">🔢</div>
+						</a>
+						<a href="#work" class="role-item">
+							<div class="role-icon">
+								<img src="images/icons/mathicon.png" alt="Mathematics" />
+							</div>
 							<div class="role-label">Mathematician</div>
-						</div>
-						<div class="role-item">
-							<div class="role-icon">📈</div>
+						</a>
+						<a href="#work" class="role-item">
+							<div class="role-icon">
+								<img src="images/icons/actuaryicon.png" alt="Actuarial Science" />
+							</div>
 							<div class="role-label">Aspiring Actuarial Scientist</div>
-						</div>
+						</a>
 					</div>
 					<div class="profile-actions">
 						<button class="btn-primary" id="summaryBtn">
@@ -1625,7 +1681,7 @@
 							<span>→</span>
 						</button>
 						<a href="#work" class="btn-secondary">
-							My Work
+							Here's all the stuff I do
 							<span>→</span>
 						</a>
 					</div>
@@ -1648,7 +1704,9 @@
 			<div class="work-grid">
 				<div class="work-card">
 					<a href="mywork.html#data-science-projects" class="work-card-link">
-						<div class="work-icon">📊</div>
+						<div class="work-icon">
+							<img src="images/icons/datascienceicon.png" alt="Data Science" />
+						</div>
 						<h3>Data Science Projects</h3>
 						<p>Machine Learning Models<br>
 							Predictive Analytics<br>
@@ -1660,7 +1718,9 @@
 
 				<div class="work-card">
 					<a href="mywork.html#actuarial-projects" class="work-card-link">
-						<div class="work-icon">🧮</div>
+						<div class="work-icon">
+							<img src="images/icons/actuaryicon.png" alt="Actuarial Science" />
+						</div>
 						<h3>Actuarial Projects</h3>
 						<p>Risk Assessment Models<br>
 							Mortality Analysis<br>
@@ -1672,7 +1732,9 @@
 
 				<div class="work-card">
 					<a href="mywork.html#healthcare-analytics" class="work-card-link">
-						<div class="work-icon">🏥</div>
+						<div class="work-icon">
+							<img src="images/icons/datavisualizationicon.png" alt="Healthcare Analytics" />
+						</div>
 						<h3>Healthcare Analytics</h3>
 						<p>Patient Outcome Analysis<br>
 							Clinical Decision Support<br>
@@ -1684,7 +1746,9 @@
 
 				<div class="work-card">
 					<a href="mywork.html#financial-analytics" class="work-card-link">
-						<div class="work-icon">💰</div>
+						<div class="work-icon">
+							<img src="images/icons/financeicon.png" alt="Financial Analytics" />
+						</div>
 						<h3>Financial Analytics</h3>
 						<p>Fraud Detection<br>
 							Credit Risk Modeling<br>
@@ -1696,7 +1760,9 @@
 
 				<div class="work-card">
 					<a href="mywork.html#marketing-analytics" class="work-card-link">
-						<div class="work-icon">📢</div>
+						<div class="work-icon">
+							<img src="images/icons/marketingicon.png" alt="Marketing Analytics" />
+						</div>
 						<h3>Marketing Analytics</h3>
 						<p>Customer Segmentation<br>
 							Campaign Optimization<br>
@@ -1708,7 +1774,9 @@
 
 				<div class="work-card">
 					<a href="mywork.html#research-projects" class="work-card-link">
-						<div class="work-icon">🔬</div>
+						<div class="work-icon">
+							<img src="images/icons/research.png" alt="Research Projects" />
+						</div>
 						<h3>Research Projects</h3>
 						<p>Academic Publications<br>
 							Methodology Development<br>
@@ -1771,7 +1839,7 @@
 					</div>
 					<div class="contact-item">
 						<div class="contact-icon">📱</div>
-						<span class="contact-text">+1 (555) 123-4567</span>
+						<span class="contact-text">801-419-2099</span>
 					</div>
 				</div>
 

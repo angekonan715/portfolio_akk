@@ -241,6 +241,24 @@
             transition: transform 0.3s ease;
         }
 
+        .box.style2 .icon.featured,
+        .box.style2 .icon.solid.featured {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box.style2 .icon.featured img,
+        .box.style2 .icon.solid.featured img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: hue-rotate(15deg) saturate(1.2) brightness(1.1);
+        }
+
         .box.style2:hover h3 {
             color: var(--primary-orange);
         }
@@ -430,7 +448,9 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon featured fa-brain"></span>
+                            <span class="icon featured">
+                                <img src="../images/icons/datascienceicon.png" alt="Logistic Regression" />
+                            </span>
                             <h3>Logistic Regression Project</h3>
                             <p><strong>Technology:</strong> Python, Scikit-learn, Pandas<br>
                                 <strong>Type:</strong> Classification Model<br>
@@ -443,7 +463,9 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon solid featured fa-shield-alt"></span>
+                            <span class="icon solid featured">
+                                <img src="../images/icons/exploratoryanalysisicon.png" alt="Fraud Detection" />
+                            </span>
                             <h3>Fraud Detection System</h3>
                             <p><strong>Technology:</strong> Python, Anomaly Detection, ML<br>
                                 <strong>Reduction:</strong> 40% in fraudulent transactions<br>
@@ -456,7 +478,9 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon featured fa-comments"></span>
+                            <span class="icon featured">
+                                <img src="../images/icons/datavisualizationicon.png" alt="NLP Analysis" />
+                            </span>
                             <h3>NLP Text Analysis Tool</h3>
                             <p><strong>Technology:</strong> Python, NLTK, BERT<br>
                                 <strong>Features:</strong> Sentiment Analysis, Topic Modeling<br>
@@ -469,7 +493,9 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon solid featured fa-thumbs-up"></span>
+                            <span class="icon solid featured">
+                                <img src="../images/icons/statsicon.png" alt="Recommendation System" />
+                            </span>
                             <h3>Recommendation System</h3>
                             <p><strong>Technology:</strong> Python, Collaborative Filtering<br>
                                 <strong>Improvement:</strong> 35% in user engagement<br>

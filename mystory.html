@@ -251,6 +251,24 @@
             transition: transform 0.3s ease;
         }
 
+        .box.style1 .icon.featured,
+        .box.style1 .icon.solid.featured {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box.style1 .icon.featured img,
+        .box.style1 .icon.solid.featured img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: hue-rotate(15deg) saturate(1.2) brightness(1.1);
+        }
+
         .box.style1 a:hover p {
             color: var(--text-light);
         }
@@ -438,42 +456,54 @@
             <div class="row aln-center">
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
-                        <span class="icon featured fa-graduation-cap"></span>
+                        <span class="icon featured">
+                            <img src="images/icons/educationjourneyicon.png" alt="Education Journey" />
+                        </span>
                         <h3><a href="#education">Education Journey</a></h3>
                         <p>My academic path from mathematics to data science and actuarial science.</p>
                     </section>
                 </div>
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
-                        <span class="icon solid featured fa-chart-line"></span>
+                        <span class="icon solid featured">
+                            <img src="images/icons/careerpathicon.png" alt="Career Path" />
+                        </span>
                         <h3><a href="#career">Career Path</a></h3>
                         <p>How I discovered my passion for data and analytics in various industries.</p>
                     </section>
                 </div>
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
-                        <span class="icon featured fa-lightbulb"></span>
+                        <span class="icon featured">
+                            <img src="images/icons/mystoryicon.png" alt="Passions & Interests" />
+                        </span>
                         <h3><a href="#passions">Passions & Interests</a></h3>
                         <p>What drives me beyond work - from reading to continuous learning.</p>
                     </section>
                 </div>
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
-                        <span class="icon solid featured fa-users"></span>
+                        <span class="icon solid featured">
+                            <img src="images/icons/statsicon.png" alt="Values" />
+                        </span>
                         <h3><a href="#values">Values & Philosophy</a></h3>
                         <p>My core beliefs about collaboration, mentorship, and excellence.</p>
                     </section>
                 </div>
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
-                        <span class="icon featured fa-rocket"></span>
+                        <span class="icon featured">
+                            <img src="images/icons/actuaryicon.png" alt="Future Goals" />
+                        </span>
                         <h3><a href="#goals">Future Goals</a></h3>
                         <p>Where I see myself heading and what I hope to achieve.</p>
                     </section>
                 </div>
                 <div class="col-4 col-6-medium col-12-small">
                     <section class="box style1">
-                        <span class="icon solid featured fa-heart"></span>
+                        <span class="icon solid featured">
+                            <img src="images/icons/datavisualizationicon.png" alt="Personal Life" />
+                        </span>
                         <h3><a href="#personal">Personal Life</a></h3>
                         <p>Beyond the professional - my background, culture, and personal growth.</p>
                     </section>
@@ -507,7 +537,8 @@
                         seeking to expand my knowledge and skills in these interconnected fields.</p>
                 </div>
                 <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit"><img src="images/pic01.jpg" alt="Education" /></span>
+                    <span class="image fit"><img src="images/personallife/weddingpict01.jpeg"
+                            alt="Education Journey" /></span>
                 </div>
             </div>
             <footer>
@@ -520,28 +551,97 @@
     <article id="career" class="wrapper style4">
         <div class="container">
             <header>
-                <h2>Career Path</h2>
-                <p>Discovering my passion for data-driven solutions</p>
+                <h2>From Survival to Excellence: A Journey of Resilience and Determination</h2>
+                <p>My story of overcoming adversity and pursuing excellence</p>
             </header>
             <div class="row">
                 <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit"><img src="images/pic02.jpg" alt="Career" /></span>
+                    <span class="image fit"><img src="images/personallife/weddingpict02.jpeg"
+                            alt="Career Path" /></span>
                 </div>
                 <div class="col-8 col-7-large col-12-medium">
-                    <p>My career journey has been driven by a desire to make meaningful impact through data. I've
-                        explored various industries where data science can create significant value - from financial
-                        services to healthcare and marketing.</p>
+                    <h3
+                        style="color: var(--primary-orange); font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600;">
+                        The Beginning of Resilience</h3>
+                    <p>
+                        When I was just seven years old, a political coup erupted in my country, turning life upside
+                        down overnight. My family and I had to flee our city without my father and without any means of
+                        transportation—only our legs and the belongings we could carry on our backs. My father had to
+                        hide because rebels were forcing able-bodied men to join their army, and those who refused faced
+                        death.</p>
 
-                    <p>In financial services, I've worked on risk assessment models and predictive analytics that help
-                        organizations make informed decisions. The complexity and real-world impact of these projects
-                        have been incredibly rewarding.</p>
+                    <p>With courage and determination, my mother led us as we walked miles until we found someone who
+                        could take us to Yamoussoukro, the nearest city. That city became my home throughout most of my
+                        school years. Every morning, I walked over two hours to attend classes, but I never allowed
+                        hardship to take away my joy. I laughed, played with friends, and dedicated myself to learning.
+                        Math and physical sciences quickly became my favorite subjects.</p>
 
-                    <p>Healthcare analytics has shown me how data can improve patient outcomes and operational
-                        efficiency. The human element in healthcare data makes this field particularly meaningful.</p>
+                    <h3
+                        style="color: var(--primary-orange); font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600;">
+                        Discovering Excellence</h3>
+                    <p>
+                        During my middle school years, something happened that completely shaped my confidence and
+                        pursuit of excellence. In a "classe d'excellence"—a special group for top students—we faced a
+                        challenging practice exam. The questions were so difficult that even our teacher struggled to
+                        find the answers. Hours passed, and no one could solve the hardest problem. With patience and
+                        determination, I worked through the challenge, and the solution finally came to me. I
+                        volunteered to present it on the board. As I wrote out my answer, my classmates applauded, and
+                        my teacher nodded in approval. That day, I discovered the power of persistence, courage, and
+                        believing in myself.</p>
 
-                    <p>Marketing analytics has taught me about consumer behavior and how data can drive strategic
-                        business decisions. The creative aspect of interpreting data to understand human behavior is
-                        fascinating.</p>
+                    <h3
+                        style="color: var(--primary-orange); font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600;">
+                        Academic Excellence</h3>
+                    <p>
+                        That spirit carried me forward. I passed my national middle school exam (BEPC) with outstanding
+                        scores—17/20 in both math and physics—during a year when more than 82% of students failed
+                        nationwide. In high school, I continued striving for excellence, ranking 1st in my class for the
+                        last two years of high school, with an average of 18/20 in math and physics.</p>
+
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <img src="images/personallife/lyceemixte.jpeg" alt="Lycée Mixte - High School"
+                            style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);" />
+                        <p style="font-style: italic; color: var(--text-light); margin-top: 0.5rem; font-size: 0.9rem;">
+                            My high school - Lycée Mixte</p>
+                    </div>
+
+                    <h3
+                        style="color: var(--primary-orange); font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600;">
+                        Higher Education and Mission</h3>
+                    <p>
+                        After high school, I pursued a degree in Mathematics and Physics at university. In my sophomore
+                        year, I made the difficult decision to pause my studies and serve a full-time mission for the
+                        Church of Jesus Christ of Latter-day Saints. As the first in my family to attend college, it was
+                        a sacrifice for both me and my parents, but it deepened my resilience and purpose.</p>
+
+                    <h3
+                        style="color: var(--primary-orange); font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600;">
+                        Pursuing Data Science</h3>
+                    <p>
+                        When I returned in 2019, I resumed my studies and earned my Bachelor's degree, ranking among the
+                        top 20 out of more than 500 candidates. I then began a Master's program in Statistics, but
+                        during that time I felt a strong call to pivot toward a career in Data Science. I made the bold
+                        decision to leave my Master's program and move to the United States to pursue a Bachelor's
+                        degree in Data Science—a step that required my family and me to invest everything we had.</p>
+
+                    <h3
+                        style="color: var(--primary-orange); font-size: 1.4rem; margin: 2rem 0 1rem 0; font-weight: 600;">
+                        My Philosophy</h3>
+                    <p>
+                        This journey taught me that excellence is not a destination but a quest—if we truly seek it, we
+                        will find it.</p>
+
+                    <div
+                        style="background: rgba(255, 255, 255, 0.95); padding: 1.5rem; border-radius: 8px; margin-top: 2rem; border-left: 4px solid var(--primary-orange); box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);">
+                        <h3
+                            style="color: var(--primary-orange); font-size: 1.3rem; margin: 0 0 1rem 0; font-weight: 600;">
+                            ✨ Takeaways</h3>
+                        <p style="margin: 0; color: #2c3e50; font-weight: 600; line-height: 1.7; font-size: 1.1rem;">
+                            This story isn't just mine—it's a reminder that resilience, adaptability, and the courage to
+                            take risks are the same qualities that help us grow in our careers and in life. Whether in a
+                            workplace project or a personal challenge, perseverance and a commitment to excellence can
+                            turn obstacles into opportunities.</p>
+                    </div>
                 </div>
             </div>
             <footer>
@@ -574,7 +674,8 @@
                         technologies, and methodologies that can enhance my ability to solve complex problems.</p>
                 </div>
                 <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit"><img src="images/pic03.jpg" alt="Passions" /></span>
+                    <span class="image fit"><img src="images/personallife/familypict.jpeg"
+                            alt="Passions & Interests" /></span>
                 </div>
             </div>
             <footer>
@@ -592,7 +693,8 @@
             </header>
             <div class="row">
                 <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit"><img src="images/pic04.jpg" alt="Values" /></span>
+                    <span class="image fit"><img src="images/personallife/weddingpict01.jpeg"
+                            alt="Values & Philosophy" /></span>
                 </div>
                 <div class="col-8 col-7-large col-12-medium">
                     <p>Collaboration is at the heart of my professional philosophy. I believe that the best solutions
@@ -641,7 +743,8 @@
                         and contribute to building teams that create impactful solutions.</p>
                 </div>
                 <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit"><img src="images/pic05.jpg" alt="Goals" /></span>
+                    <span class="image fit"><img src="images/personallife/weddingpict02.jpeg"
+                            alt="Future Goals" /></span>
                 </div>
             </div>
             <footer>
@@ -659,7 +762,7 @@
             </header>
             <div class="row">
                 <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit"><img src="images/pic06.jpg" alt="Personal" /></span>
+                    <span class="image fit"><img src="images/personallife/familypict.jpeg" alt="Family" /></span>
                 </div>
                 <div class="col-8 col-7-large col-12-medium">
                     <p>My personal background has shaped my perspective and approach to both life and work. Growing up,
