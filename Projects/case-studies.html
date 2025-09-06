@@ -6,7 +6,380 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
     <link rel="stylesheet" href="../assets/css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* Modern color scheme variables */
+        :root {
+            --primary-orange: #ff6b35;
+            --primary-orange-hover: #e55a2b;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --white: #ffffff;
+            --light-gray: #f8f9fa;
+            --border-light: #e9ecef;
+            --shadow: rgba(0, 0, 0, 0.1);
+        }
+
+        /* Modern header styling */
+        .modern-header {
+            background: var(--white);
+            box-shadow: 0 2px 10px var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+
+        .logo-bars {
+            display: flex;
+            gap: 2px;
+        }
+
+        .logo-bar {
+            width: 3px;
+            height: 20px;
+            background: var(--primary-orange);
+        }
+
+        .logo-bar:nth-child(2) {
+            height: 16px;
+        }
+
+        .logo-bar:nth-child(3) {
+            height: 12px;
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 3px;
+            background: var(--primary-orange);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-arrow {
+            font-size: 0.8rem;
+            transition: transform 0.3s ease;
+        }
+
+        .dropdown:hover .dropdown-arrow {
+            transform: translateY(-2px);
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--white);
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 30px var(--shadow);
+            padding: 1rem;
+            min-width: 200px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.5rem 0;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border-light);
+            transition: color 0.3s ease;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            color: var(--primary-orange);
+        }
+
+        .contact-btn {
+            background: var(--primary-orange);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .contact-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        .contact-btn:hover::after {
+            width: 100%;
+        }
+
+        .contact-btn:hover {
+            background: var(--primary-orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        /* Box styling with orange highlights */
+        .box.style2 {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .box.style2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-orange);
+            border-radius: 12px 12px 0 0;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .box.style2:hover::before {
+            transform: scaleX(1);
+        }
+
+        .box.style2:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(255, 107, 53, 0.2);
+            border: 2px solid var(--primary-orange);
+        }
+
+        .box.style2:hover .icon.featured img {
+            transform: scale(1.1);
+        }
+
+        .box.style2:hover h3 {
+            color: var(--primary-orange);
+        }
+
+        .box.style2 .icon.featured,
+        .box.style2 .icon.solid.featured {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box.style2 .icon.featured img,
+        .box.style2 .icon.solid.featured img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: hue-rotate(15deg) saturate(1.2) brightness(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        .box.style2 a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+            transition: all 0.3s ease;
+        }
+
+        .box.style2 a::after {
+            content: "Click to learn more →";
+            display: block;
+            text-align: center;
+            color: var(--primary-orange);
+            font-size: 0.9em;
+            margin-top: 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .box.style2 a:hover::after {
+            opacity: 1;
+        }
+
+        .button {
+            background: var(--primary-orange);
+            color: var(--white);
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            position: relative;
+        }
+
+        .button::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--white);
+            transition: width 0.3s ease;
+        }
+
+        .button:hover::after {
+            width: 100%;
+        }
+
+        .button:hover {
+            background: var(--primary-orange-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .button.large {
+            padding: 1.2rem 2.4rem;
+            font-size: 1.1rem;
+        }
+
+        /* Body with background image */
+        body {
+            background: linear-gradient(135deg, rgba(248, 249, 250, 0.3) 0%, rgba(255, 255, 255, 0.9) 100%),
+                url('../images/mypict.jpg') center/cover fixed;
+            background-attachment: fixed;
+            padding-top: 80px;
+        }
+
+        /* Reduce wrapper spacing */
+        .wrapper.style1 {
+            padding: 3em 0 3em 0 !important;
+        }
+
+        /* Modern icon presentation */
+        .project-header-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #ff8c42 100%);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+            margin: 0 auto 1.5rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 16px;
+        }
+
+        .project-header-icon img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Smaller project cards */
+        .box.style2 {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .box.style2 .icon.featured,
+        .box.style2 .icon.solid.featured {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 0.75rem auto;
+        }
+
+        .box.style2 h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .box.style2 p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
         /* Professional styling for project cards */
         .box.style2 a {
             text-decoration: none;
@@ -69,19 +442,55 @@
 </head>
 
 <body class="is-preload">
-    <!-- Nav -->
-    <nav id="nav">
-        <ul class="container">
-            <li><a href="../mywork.html">← Back to My Work</a></li>
-        </ul>
-    </nav>
+    <!-- Modern Header -->
+    <header class="modern-header">
+        <div class="header-container">
+            <a href="../index.html" class="logo">
+                <div class="logo-bars">
+                    <div class="logo-bar"></div>
+                    <div class="logo-bar"></div>
+                    <div class="logo-bar"></div>
+                </div>
+                Ange K. Kouadio
+            </a>
+            <nav class="main-nav">
+                <div class="nav-item">
+                    <a href="../index.html" class="nav-link">Home</a>
+                </div>
+                <div class="nav-item dropdown">
+                    <a href="../mywork.html" class="nav-link">
+                        My Work
+                        <span class="dropdown-arrow">↑</span>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="machine-learning.html" class="dropdown-item">Machine Learning</a>
+                        <a href="actuarial-science.html" class="dropdown-item">Actuarial Science</a>
+                        <a href="r-statistics.html" class="dropdown-item">R & Statistics</a>
+                        <a href="sql.html" class="dropdown-item">SQL</a>
+                        <a href="case-studies.html" class="dropdown-item">Case Studies & Hackathon</a>
+                    </div>
+                </div>
+                <div class="nav-item">
+                    <a href="../mystory.html" class="nav-link">My Story</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../images/MyResume.pdf" target="_blank" class="nav-link">Resume</a>
+                </div>
+                <div class="nav-item">
+                    <a href="../index.html#contact" class="contact-btn">Contact me</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
     <!-- Header -->
     <article id="top" class="wrapper style1">
         <div class="container">
             <div class="row">
                 <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit"><img src="../images/pic00.jpg" alt="" /></span>
+                    <div class="project-header-icon">
+                        <img src="../images/icons/casecompetitionicon.png" alt="Case Studies" />
+                    </div>
                 </div>
                 <div class="col-8 col-7-large col-12-medium">
                     <header>
@@ -105,7 +514,9 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon featured fa-trophy"></span>
+                            <span class="icon featured">
+                                <img src="../images/icons/casecompetitionicon.png" alt="Data Science Competition" />
+                            </span>
                             <h3>Data Science Competition</h3>
                             <p><strong>Technology:</strong> Python, Machine Learning<br>
                                 <strong>Ranking:</strong> Top 10%<br>
@@ -118,10 +529,10 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon solid featured fa-lightbulb"></span>
-                            <h3
-                                style="font-family: Arial, sans-serif; font-weight: normal; color: #333; text-align: center; margin: 10px 0;">
-                                Innovation Hackathon</h3>
+                            <span class="icon featured">
+                                <img src="../images/icons/casecompetitionicon.png" alt="Innovation Hackathon" />
+                            </span>
+                            <h3>Innovation Hackathon</h3>
                             <p><strong>Technology:</strong> Full-stack development<br>
                                 <strong>Award:</strong> Best Innovation<br>
                                 <strong>Solution:</strong> Real-time analytics<br>
@@ -133,7 +544,9 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon featured fa-users"></span>
+                            <span class="icon featured">
+                                <img src="../images/icons/casecompetitionicon.png" alt="Industry Case Study" />
+                            </span>
                             <h3>Industry Case Study</h3>
                             <p><strong>Technology:</strong> R, Statistical Analysis<br>
                                 <strong>Client:</strong> Fortune 500 company<br>
@@ -146,7 +559,9 @@
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="../project-details.html">
-                            <span class="icon solid featured fa-rocket"></span>
+                            <span class="icon featured">
+                                <img src="../images/icons/casecompetitionicon.png" alt="Startup Challenge" />
+                            </span>
                             <h3>Startup Challenge</h3>
                             <p><strong>Technology:</strong> Python, Data Science<br>
                                 <strong>Result:</strong> Winning solution<br>

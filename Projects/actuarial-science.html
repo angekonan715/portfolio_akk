@@ -329,6 +329,69 @@
             padding-top: 80px;
         }
 
+        /* Reduce wrapper spacing */
+        .wrapper.style1 {
+            padding: 3em 0 3em 0 !important;
+        }
+
+        /* Modern icon presentation */
+        .project-header-icon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 120px;
+            height: 120px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #ff8c42 100%);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.3);
+            margin: 0 auto 1.5rem auto;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-header-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border-radius: 16px;
+        }
+
+        .project-header-icon img {
+            width: 60px;
+            height: 60px;
+            object-fit: contain;
+            filter: brightness(0) invert(1);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Smaller project cards */
+        .box.style2 {
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .box.style2 .icon.featured,
+        .box.style2 .icon.solid.featured {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 0.75rem auto;
+        }
+
+        .box.style2 h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .box.style2 p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
         /* Responsive Design */
         @media screen and (max-width: 768px) {
             .header-container {
@@ -424,7 +487,9 @@
         <div class="container">
             <div class="row">
                 <div class="col-4 col-5-large col-12-medium">
-                    <span class="image fit"><img src="../images/pic00.jpg" alt="" /></span>
+                    <div class="project-header-icon">
+                        <img src="../images/icons/actuaryicon.png" alt="Actuarial Science" />
+                    </div>
                 </div>
                 <div class="col-8 col-7-large col-12-medium">
                     <header>
