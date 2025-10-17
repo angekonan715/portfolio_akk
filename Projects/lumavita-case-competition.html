@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>LumaVita Case Competition - Ange K. Kouadio</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .award-badge {
+            background: #ffd700;
+            color: #000;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
+        }
+
+        .award-badge::before {
+            content: "🏆";
+            font-size: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin: 0 0 1rem 0;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+            line-height: 1.5;
+        }
+
+        .project-description {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #ff6b35;
+        }
+
+        .project-description h3 {
+            color: #ff6b35;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .project-description p {
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .key-achievements {
+            background: #e8f5e8;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            border-left: 4px solid #28a745;
+        }
+
+        .key-achievements h3 {
+            color: #28a745;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .key-achievements ul {
+            margin: 0;
+            padding-left: 1.5rem;
+        }
+
+        .key-achievements li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .back-link {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 2rem;
+            transition: background 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: #e55a2b;
+        }
+
+        .project-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .project-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-image:hover {
+            transform: translateY(-2px);
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .image-caption {
+            background: #f8f9fa;
+            padding: 0.75rem;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            font-weight: 500;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="award-badge">2nd Place Winner</div>
+
+        <h1>LumaVita: AI-Powered Air Quality Solution</h1>
+        <p class="subtitle">An ML AI-powered prototype designed to help children and families affected by asthma or
+            respiratory issues by providing timely, localized, and accessible air quality data.</p>
+
+        <div class="project-description">
+            <h3>Solution Overview</h3>
+            <p><strong>What:</strong> LumaVita is an ML AI-powered prototype designed to help children and families
+                affected by asthma or respiratory issues by providing timely, localized, and accessible air quality
+                data. By integrating multiple datasets, LumaVita predicts hazardous air quality conditions and alerts
+                users before symptoms can worsen.</p>
+
+            <p><strong>How:</strong> LumaVita collects and processes environmental data from trusted global and national
+                sources. It uses OpenAQ's aggregated, publicly available air quality data, gathered from government and
+                research-grade monitors worldwide. Additionally, it incorporates model-generated air quality forecasts
+                from the National Air Quality Forecasting Capability (NAQFC), which includes predictions from three
+                major forecasting systems. This data is then processed using advanced ML models to provide personalized
+                alerts, visual dashboards, and proactive health recommendations for caregivers and patients.</p>
+        </div>
+
+        <div class="project-description">
+            <h3>AWS Model Performance</h3>
+            <p><strong>Technology Stack:</strong> Built on AWS cloud infrastructure with advanced machine learning
+                models for air quality prediction.</p>
+            <p><strong>Model Accuracy:</strong> The model achieves excellent performance with RMSE of 1.084 and MSE of
+                1.176, meaning predictions are typically within ±1.084 units of actual PM2.5 values. This high accuracy
+                enables reliable air quality forecasting for pediatric asthma management.</p>
+        </div>
+
+        <div class="key-achievements">
+            <h3>Key Achievements</h3>
+            <ul>
+                <li>Provides real-time and forecasted air quality alerts specific to respiratory risk levels</li>
+                <li>Supports proactive asthma management, reducing emergency visits and long-term health impacts</li>
+                <li>Empowers caregivers with knowledge to make informed decisions about outdoor activities</li>
+                <li>Scalable and adaptable for use in schools, pediatric clinics, and smart home systems</li>
+                <li>Encourages awareness and engagement with environmental health issues</li>
+            </ul>
+        </div>
+
+        <h2>Project Showcase</h2>
+        <div class="project-images">
+            <div class="project-image">
+                <img src="../Projects/Case Competition/LumavitaHackatonDashboard.jpg"
+                    alt="LumaVita Hackathon Dashboard" />
+                <div class="image-caption">LumaVita Hackathon Dashboard</div>
+            </div>
+            <div class="project-image">
+                <img src="../Projects/Case Competition/LumavitaAIHackatonDashboard2.jpg" alt="LumaVita AI Dashboard" />
+                <div class="image-caption">LumaVita AI Dashboard Interface</div>
+            </div>
+            <div class="project-image">
+                <img src="../Projects/Case Competition/LumavitaCertificateofCompletion.png"
+                    alt="LumaVita Certificate" />
+                <div class="image-caption">Certificate of Completion</div>
+            </div>
+        </div>
+
+        <p><strong>Conclusion:</strong> LumaVita bridges the gap between environmental data and pediatric health by
+            combining open data sources with predictive AI. With respiratory illnesses among children on the rise due to
+            pollution and climate change, LumaVita offers a timely, innovative, and impactful solution. It not only
+            provides actionable insights but also fosters a preventative approach to asthma care, supporting healthier
+            futures for children around the world.</p>
+
+        <a href="case-studies.html" class="back-link">← Back to Case Studies</a>
+    </div>
+</body>
+
+</html>
