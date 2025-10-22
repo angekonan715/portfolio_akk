@@ -392,6 +392,121 @@
             line-height: 1.4;
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 2% auto;
+            padding: 0;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-50px) scale(0.9);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, var(--primary-orange) 0%, #ff8c42 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .close {
+            color: white;
+            font-size: 2rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            line-height: 1;
+        }
+
+        .close:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
+        }
+
+        .modal-body {
+            padding: 2rem;
+        }
+
+        .modal-description {
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .modal-image {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .modal-highlights {
+            margin-top: 2rem;
+        }
+
+        .modal-highlights h3 {
+            color: var(--primary-orange);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .modal-highlights ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .modal-highlights li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border-light);
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .modal-highlights li:last-child {
+            border-bottom: none;
+        }
+
+        .modal-highlights strong {
+            color: var(--primary-orange);
+            font-weight: 600;
+        }
+
         /* Responsive Design */
         @media screen and (max-width: 768px) {
             .header-container {
@@ -510,6 +625,36 @@
                 <p>Click on any project to view detailed information</p>
             </header>
             <div class="row">
+                <div class="col-6 col-12-medium">
+                    <section class="box style2">
+                        <a href="#" onclick="openModal('les-miserables-prediction')">
+                            <span class="icon featured">
+                                <img src="../images/icons/datascienceicon.png" alt="ML Project" />
+                            </span>
+                            <h3>Les Misérables Text Prediction</h3>
+                            <p><strong>Technology:</strong> CNN, Natural Language Processing<br>
+                                <strong>Features:</strong> Text prediction, Word completion<br>
+                                <strong>Dataset:</strong> Les Misérables novel<br>
+                                <strong>Model:</strong> Convolutional Neural Network
+                            </p>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <section class="box style2">
+                        <a href="#" onclick="openModal('stroke-prediction')">
+                            <span class="icon featured">
+                                <img src="../images/icons/datascienceicon.png" alt="Stroke Prediction" />
+                            </span>
+                            <h3>Stroke Prediction Model</h3>
+                            <p><strong>Technology:</strong> Random Forest, XGBoost, Decision Tree<br>
+                                <strong>Features:</strong> Medical data analysis, Risk assessment<br>
+                                <strong>Accuracy:</strong> 94% prediction accuracy<br>
+                                <strong>Application:</strong> Healthcare prediction
+                            </p>
+                        </a>
+                    </section>
+                </div>
             </div>
             <footer>
                 <a href="../mywork.html" class="button large scrolly">← Back to Categories</a>
@@ -538,6 +683,111 @@
         </div>
     </article>
 
+    <!-- Modal for Les Misérables Text Prediction -->
+    <div id="les-miserables-prediction" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Les Misérables Text Prediction</h2>
+                <span class="close" onclick="closeModal('les-miserables-prediction')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">
+                    <p>Developed a Convolutional Neural Network (CNN) model to predict the next words in text sequences
+                        using Victor Hugo's "Les Misérables" as the training dataset. The model learns patterns from the
+                        literary text and generates coherent word completions for given phrases.</p>
+                </div>
+                <div class="modal-image">
+                    <img src="Machine Learning/cnn miserable result.png" alt="CNN Text Prediction Results"
+                        style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+                </div>
+                <div class="modal-highlights">
+                    <h3>Project Features</h3>
+                    <ul>
+                        <li><strong>CNN Architecture:</strong> Implemented Convolutional Neural Network for text
+                            sequence prediction</li>
+                        <li><strong>Literary Dataset:</strong> Trained on Victor Hugo's "Les Misérables" novel</li>
+                        <li><strong>Text Generation:</strong> Generates coherent word completions for given phrases</li>
+                        <li><strong>Performance Metrics:</strong> Achieved loss of 2.9492 with 80 training steps</li>
+                        <li><strong>Real-time Generation:</strong> Produces multiple text samples with varying contexts
+                        </li>
+                        <li><strong>Google Colab:</strong> Complete implementation available in Jupyter notebook</li>
+                    </ul>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="https://colab.research.google.com/drive/1Fj8OIi5nXHxvDDzl8i9A3gE4L5YRpuVg#scrollTo=7vOxc7CkaGQB"
+                            target="_blank" class="button large">Learn More - View Google Colab</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Stroke Prediction -->
+    <div id="stroke-prediction" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Stroke Prediction Model</h2>
+                <span class="close" onclick="closeModal('stroke-prediction')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">
+                    <p>Developed a comprehensive stroke prediction model using ensemble machine learning techniques
+                        including Random Forest, XGBoost, and Decision Tree algorithms. The model analyzes medical data
+                        to predict stroke risk with high accuracy, providing valuable insights for healthcare
+                        decision-making.</p>
+                </div>
+                <div class="modal-image">
+                    <img src="Machine Learning/StrokePrediction.png" alt="Stroke Prediction Model Results"
+                        style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+                </div>
+                <div class="modal-image">
+                    <img src="Machine Learning/StrokeDection_featuresImportance.png" alt="Feature Importance Analysis"
+                        style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);" />
+                </div>
+                <div class="modal-highlights">
+                    <h3>Model Performance</h3>
+                    <ul>
+                        <li><strong>Random Forest:</strong> 94% accuracy with precision of 0.96 and recall of 0.93</li>
+                        <li><strong>XGBoost:</strong> 94% accuracy with precision 0.96/0.93, recall 0.93/0.96, F1-score
+                            0.94/0.94</li>
+                        <li><strong>Decision Tree:</strong> 91% accuracy with precision 0.89/0.93, recall 0.93/0.89,
+                            F1-score 0.91/0.91</li>
+                        <li><strong>Ensemble Approach:</strong> Combined multiple algorithms for robust predictions</li>
+                        <li><strong>Medical Features:</strong> Analyzed age, gender, hypertension, heart disease, and
+                            lifestyle factors</li>
+                        <li><strong>Risk Assessment:</strong> Binary classification for stroke prediction (0: No stroke,
+                            1: Stroke)</li>
+                    </ul>
+                    <h3>Technical Implementation</h3>
+                    <ul>
+                        <li><strong>Data Preprocessing:</strong> Handled missing values and categorical variables</li>
+                        <li><strong>Feature Engineering:</strong> Created meaningful features from medical data</li>
+                        <li><strong>Model Training:</strong> Used train-test split with 100 estimators for Random Forest
+                        </li>
+                        <li><strong>Hyperparameter Tuning:</strong> Optimized model parameters for best performance</li>
+                        <li><strong>Cross-Validation:</strong> Ensured model reliability across different data samples
+                        </li>
+                        <li><strong>Performance Metrics:</strong> Comprehensive evaluation using precision, recall,
+                            F1-score</li>
+                    </ul>
+                    <h3>Healthcare Recommendations</h3>
+                    <p>Based on the feature importance analysis, age and glucose level are high determinants of stroke
+                        risk, making them critical factors for healthcare providers to monitor closely. The model's high
+                        accuracy (94%) makes it suitable for early screening to identify at-risk patients before
+                        symptoms appear, enabling proactive intervention strategies. Healthcare systems should implement
+                        targeted preventive care protocols focusing on these key risk factors, particularly for elderly
+                        patients and those with elevated glucose levels, while allocating resources efficiently to
+                        patients with the highest risk scores. Regular re-evaluation of risk scores should be conducted
+                        as patient conditions change, allowing for dynamic adjustment of treatment plans and monitoring
+                        protocols based on evolving risk profiles.</p>
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <a href="https://colab.research.google.com/drive/1J6d6Nhd48ZhOCiHQrfo7OuIkTD9pG6HU?usp=sharing"
+                            target="_blank" class="button large">Learn More - View Google Colab</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Scripts -->
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/js/jquery.scrolly.min.js"></script>
@@ -545,6 +795,43 @@
     <script src="../assets/js/breakpoints.min.js"></script>
     <script src="../assets/js/util.js"></script>
     <script src="../assets/js/main.js"></script>
+
+    <script>
+        // Modal functions
+        function openModal(modalId) {
+            document.getElementById(modalId).style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        // Close modal when clicking outside of it
+        window.onclick = function (event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                    document.body.style.overflow = "auto";
+                }
+            });
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function (event) {
+            if (event.key === 'Escape') {
+                const modals = document.querySelectorAll('.modal');
+                modals.forEach(modal => {
+                    if (modal.style.display === "block") {
+                        modal.style.display = "none";
+                        document.body.style.overflow = "auto";
+                    }
+                });
+            }
+        });
+    </script>
 
 </body>
 

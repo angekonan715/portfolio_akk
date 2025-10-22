@@ -535,6 +535,59 @@
             word-wrap: break-word;
         }
 
+        /* Blur sensitive table and column names */
+        .sql-code .blurred {
+            position: relative;
+            color: transparent;
+            text-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(90deg, #e8e8e8 0%, #f5f5f5 30%, #e8e8e8 70%, #f0f0f0 100%);
+            background-size: 300% 100%;
+            animation: professional-blur 3s ease-in-out infinite;
+            border-radius: 4px;
+            padding: 2px 4px;
+            margin: 0 1px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        @keyframes professional-blur {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            25% {
+                background-position: 50% 50%;
+            }
+
+            75% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Privacy Notice Styling */
+        .privacy-notice {
+            background: transparent;
+            border: none;
+            padding: 0.5rem 0;
+            margin: 0.75rem 0;
+            font-size: 0.8rem;
+            line-height: 1.3;
+            font-style: italic;
+        }
+
+        .privacy-notice p {
+            margin: 0;
+            color: #6c757d;
+        }
+
+        .privacy-notice strong {
+            color: #6c757d;
+            font-weight: 500;
+        }
+
         /* Responsive Design */
         @media screen and (max-width: 768px) {
             .header-container {
@@ -653,6 +706,10 @@
                     </header>
                     <p>Advanced SQL queries, database optimization, and data extraction techniques. Explore my expertise
                         in complex queries, stored procedures, and database design.</p>
+                    <div class="privacy-notice">
+                        <p><strong>Note:</strong> Table and column names have been anonymized for data privacy
+                            protection.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -666,96 +723,6 @@
                 <p>Click on any project to view detailed information</p>
             </header>
             <div class="row">
-                <div class="col-6 col-12-medium">
-                    <section class="box style2">
-                        <a href="#" onclick="openModal('complex-data-extraction')">
-                            <span class="icon featured">
-                                <img src="../images/icons/exploratoryanalysisicon.png" alt="Data Extraction" />
-                            </span>
-                            <h3>Complex Data Extraction</h3>
-                            <p><strong>Technology:</strong> PostgreSQL, Python<br>
-                                <strong>Features:</strong> Multi-table joins, Subqueries<br>
-                                <strong>Performance:</strong> 50% faster queries<br>
-                                <strong>Duration:</strong> 2 weeks
-                            </p>
-                        </a>
-                    </section>
-                </div>
-                <div class="col-6 col-12-medium">
-                    <section class="box style2">
-                        <a href="#" onclick="openModal('etl-pipeline')">
-                            <span class="icon solid featured">
-                                <img src="../images/icons/exploratoryanalysisicon.png" alt="ETL Pipeline" />
-                            </span>
-                            <h3>ETL Pipeline Development</h3>
-                            <p><strong>Technology:</strong> SQL Server, SSIS<br>
-                                <strong>Features:</strong> Automated data processing<br>
-                                <strong>Volume:</strong> 1M+ records daily<br>
-                                <strong>Duration:</strong> 4 weeks
-                            </p>
-                        </a>
-                    </section>
-                </div>
-                <div class="col-6 col-12-medium">
-                    <section class="box style2">
-                        <a href="#" onclick="openModal('analytics-dashboard')">
-                            <span class="icon featured">
-                                <img src="../images/icons/datavisualizationicon.png" alt="Analytics Queries" />
-                            </span>
-                            <h3>Analytics Dashboard Queries</h3>
-                            <p><strong>Technology:</strong> MySQL, Tableau<br>
-                                <strong>Features:</strong> Real-time analytics<br>
-                                <strong>Users:</strong> 200+ daily active<br>
-                                <strong>Duration:</strong> 3 weeks
-                            </p>
-                        </a>
-                    </section>
-                </div>
-                <div class="col-6 col-12-medium">
-                    <section class="box style2">
-                        <a href="#" onclick="openModal('data-security')">
-                            <span class="icon solid featured">
-                                <img src="../images/icons/exploratoryanalysisicon.png" alt="Data Security" />
-                            </span>
-                            <h3>Data Security & Access Control</h3>
-                            <p><strong>Technology:</strong> Oracle, PL/SQL<br>
-                                <strong>Features:</strong> Role-based access, Encryption<br>
-                                <strong>Compliance:</strong> GDPR, SOX<br>
-                                <strong>Duration:</strong> 5 weeks
-                            </p>
-                        </a>
-                    </section>
-                </div>
-                <div class="col-6 col-12-medium">
-                    <section class="box style2">
-                        <a href="#" onclick="openModal('database-optimization')">
-                            <span class="icon featured">
-                                <img src="../images/icons/exploratoryanalysisicon.png" alt="Database Optimization" />
-                            </span>
-                            <h3>Database Performance Optimization</h3>
-                            <p><strong>Technology:</strong> MySQL, Indexing<br>
-                                <strong>Features:</strong> Query optimization, Indexing strategies<br>
-                                <strong>Performance:</strong> 75% faster queries<br>
-                                <strong>Duration:</strong> 3 weeks
-                            </p>
-                        </a>
-                    </section>
-                </div>
-                <div class="col-6 col-12-medium">
-                    <section class="box style2">
-                        <a href="#" onclick="openModal('data-warehouse')">
-                            <span class="icon solid featured">
-                                <img src="../images/icons/exploratoryanalysisicon.png" alt="Data Warehouse" />
-                            </span>
-                            <h3>Data Warehouse Design</h3>
-                            <p><strong>Technology:</strong> SQL Server, SSAS<br>
-                                <strong>Features:</strong> Star schema, ETL processes<br>
-                                <strong>Volume:</strong> 10TB+ data warehouse<br>
-                                <strong>Duration:</strong> 8 weeks
-                            </p>
-                        </a>
-                    </section>
-                </div>
                 <div class="col-6 col-12-medium">
                     <section class="box style2">
                         <a href="#" onclick="openModal('graduation-survey-analysis')">
@@ -772,12 +739,227 @@
                         </a>
                     </section>
                 </div>
+                <div class="col-6 col-12-medium">
+                    <section class="box style2">
+                        <a href="#" onclick="openModal('sql-debugging-expertise')">
+                            <span class="icon featured">
+                                <img src="../images/icons/exploratoryanalysisicon.png" alt="SQL Debugging" />
+                            </span>
+                            <h3>SQL Code Debugging</h3>
+                            <p><strong>Technology:</strong> SQL Server, Complex Queries<br>
+                                <strong>Features:</strong> 300+ line debugging, Performance optimization<br>
+                                <strong>Challenge:</strong> Multi-table joins, Data validation<br>
+                                <strong>Result:</strong> 95% performance improvement
+                            </p>
+                        </a>
+                    </section>
+                </div>
             </div>
             <footer>
                 <a href="../mywork.html" class="button large scrolly">← Back to Categories</a>
             </footer>
         </div>
     </article>
+
+    <!-- Modal for SQL Debugging Expertise -->
+    <div id="sql-debugging-expertise" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>SQL Code Debugging Expertise</h2>
+                <span class="close" onclick="closeModal('sql-debugging-expertise')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">
+                    <p>Successfully debugged and optimized a complex 300+ line SQL query that was experiencing
+                        performance issues and data inconsistencies. The debugging process involved analyzing execution
+                        plans, identifying bottlenecks, and implementing strategic optimizations that resulted in a 95%
+                        performance improvement.</p>
+                </div>
+                <div class="sql-code">
+                    <pre>-- Complex 300+ line SQL query with debugging optimizations
+-- Original problematic query structure (simplified for demonstration)
+WITH
+<span class="blurred">_StudentData</span> AS (
+    SELECT 
+        s.<span class="blurred">StudentID</span>,
+        s.<span class="blurred">FirstName</span>,
+        s.<span class="blurred">LastName</span>,
+        s.<span class="blurred">Email</span>,
+        s.<span class="blurred">EnrollmentDate</span>,
+        s.<span class="blurred">Status</span>,
+        s.<span class="blurred">PhoneNumber</span>,
+        s.<span class="blurred">Address</span>,
+        s.<span class="blurred">City</span>,
+        s.<span class="blurred">State</span>,
+        s.<span class="blurred">ZipCode</span>,
+        s.<span class="blurred">DateOfBirth</span>,
+        s.<span class="blurred">Gender</span>,
+        s.<span class="blurred">Ethnicity</span>,
+        s.<span class="blurred">CitizenshipStatus</span>,
+        d.<span class="blurred">DegreeProgram</span>,
+        d.<span class="blurred">Major</span>,
+        d.<span class="blurred">Minor</span>,
+        d.<span class="blurred">GPA</span>,
+        d.<span class="blurred">CreditsEarned</span>,
+        d.<span class="blurred">ExpectedGraduationDate</span>,
+        d.<span class="blurred">AcademicStanding</span>,
+        d.<span class="blurred">AdvisorID</span>
+    FROM <span class="blurred">Students</span> s
+    INNER JOIN <span class="blurred">DegreePrograms</span> d ON s.<span class="blurred">StudentID</span> = d.<span class="blurred">StudentID</span>
+    WHERE s.<span class="blurred">Status</span> IN ('Active', 'Graduated', 'On Leave')
+        AND d.<span class="blurred">IsActive</span> = 1
+        AND s.<span class="blurred">EnrollmentDate</span> >= '2020-01-01'
+        AND d.<span class="blurred">ExpectedGraduationDate</span> IS NOT NULL
+),
+<span class="blurred">_CourseHistory</span> AS (
+    SELECT 
+        ch.<span class="blurred">StudentID</span>,
+        ch.<span class="blurred">CourseID</span>,
+        ch.<span class="blurred">Semester</span>,
+        ch.<span class="blurred">Year</span>,
+        ch.<span class="blurred">Grade</span>,
+        ch.<span class="blurred">Credits</span>,
+        ch.<span class="blurred">AttemptNumber</span>,
+        ch.<span class="blurred">WithdrawalDate</span>,
+        ch.<span class="blurred">InstructorID</span>,
+        c.<span class="blurred">CourseName</span>,
+        c.<span class="blurred">Department</span>,
+        c.<span class="blurred">Level</span>,
+        c.<span class="blurred">Prerequisites</span>,
+        c.<span class="blurred">Corequisites</span>,
+        c.<span class="blurred">CourseDescription</span>
+    FROM <span class="blurred">CourseHistory</span> ch
+    INNER JOIN <span class="blurred">Courses</span> c ON ch.<span class="blurred">CourseID</span> = c.<span class="blurred">CourseID</span>
+    WHERE ch.<span class="blurred">Grade</span> IS NOT NULL
+        AND ch.<span class="blurred">Credits</span> > 0
+        AND ch.<span class="blurred">Year</span> >= 2020
+        AND c.<span class="blurred">Department</span> IS NOT NULL
+),
+<span class="blurred">_FinancialAid</span> AS (
+    SELECT 
+        fa.<span class="blurred">StudentID</span>,
+        fa.<span class="blurred">AidType</span>,
+        fa.<span class="blurred">Amount</span>,
+        fa.<span class="blurred">AcademicYear</span>,
+        fa.<span class="blurred">Status</span>,
+        fa.<span class="blurred">DisbursementDate</span>,
+        fa.<span class="blurred">Source</span>,
+        fa.<span class="blurred">RepaymentStartDate</span>,
+        fa.<span class="blurred">InterestRate</span>,
+        fa.<span class="blurred">Terms</span>
+    FROM <span class="blurred">FinancialAid</span> fa
+    WHERE fa.<span class="blurred">Status</span> = 'Approved'
+        AND fa.<span class="blurred">Amount</span> > 0
+        AND fa.<span class="blurred">AcademicYear</span> >= 2020
+),
+<span class="blurred">_GraduationRequirements</span> AS (
+    SELECT 
+        gr.<span class="blurred">ProgramID</span>,
+        gr.<span class="blurred">RequirementType</span>,
+        gr.<span class="blurred">RequiredCredits</span>,
+        gr.<span class="blurred">RequiredGPA</span>,
+        gr.<span class="blurred">IsMandatory</span>,
+        gr.<span class="blurred">Description</span>,
+        gr.<span class="blurred">EffectiveDate</span>,
+        gr.<span class="blurred">ExpirationDate</span>
+    FROM <span class="blurred">GraduationRequirements</span> gr
+    WHERE gr.<span class="blurred">IsActive</span> = 1
+        AND gr.<span class="blurred">EffectiveDate</span> <= GETDATE()
+        AND (gr.<span class="blurred">ExpirationDate</span> IS NULL OR gr.<span class="blurred">ExpirationDate</span> >= GETDATE())
+),
+<span class="blurred">_StudentProgress</span> AS (
+    SELECT 
+        sd.<span class="blurred">StudentID</span>,
+        sd.<span class="blurred">DegreeProgram</span>,
+        COUNT(DISTINCT ch.<span class="blurred">CourseID</span>) as <span class="blurred">CoursesCompleted</span>,
+        SUM(ch.<span class="blurred">Credits</span>) as <span class="blurred">TotalCredits</span>,
+        AVG(CASE 
+            WHEN ch.<span class="blurred">Grade</span> = 'A' THEN 4.0
+            WHEN ch.<span class="blurred">Grade</span> = 'B' THEN 3.0
+            WHEN ch.<span class="blurred">Grade</span> = 'C' THEN 2.0
+            WHEN ch.<span class="blurred">Grade</span> = 'D' THEN 1.0
+            ELSE 0.0
+        END) as <span class="blurred">CalculatedGPA</span>,
+        MAX(ch.<span class="blurred">Year</span>) as <span class="blurred">LastActiveYear</span>,
+        COUNT(CASE WHEN ch.<span class="blurred">Grade</span> = 'F' THEN 1 END) as <span class="blurred">FailedCourses</span>,
+        COUNT(CASE WHEN ch.<span class="blurred">Grade</span> = 'W' THEN 1 END) as <span class="blurred">WithdrawnCourses</span>
+    FROM <span class="blurred">_StudentData</span> sd
+    LEFT JOIN <span class="blurred">_CourseHistory</span> ch ON sd.<span class="blurred">StudentID</span> = ch.<span class="blurred">StudentID</span>
+    GROUP BY sd.<span class="blurred">StudentID</span>, sd.<span class="blurred">DegreeProgram</span>
+),
+<span class="blurred">_AcademicPerformance</span> AS (
+    SELECT 
+        sp.<span class="blurred">StudentID</span>,
+        CASE 
+            WHEN sp.<span class="blurred">CalculatedGPA</span> >= 3.7 THEN 'Dean\'s List'
+            WHEN sp.<span class="blurred">CalculatedGPA</span> >= 3.0 THEN 'Good Standing'
+            WHEN sp.<span class="blurred">CalculatedGPA</span> >= 2.0 THEN 'Academic Probation'
+            ELSE 'Academic Suspension'
+        END as <span class="blurred">AcademicStanding</span>,
+        CASE 
+            WHEN sp.<span class="blurred">FailedCourses</span> > 3 THEN 'At Risk'
+            WHEN sp.<span class="blurred">WithdrawnCourses</span> > 2 THEN 'Monitor'
+            ELSE 'On Track'
+        END as <span class="blurred">RiskStatus</span>
+    FROM <span class="blurred">_StudentProgress</span> sp
+)
+SELECT 
+    sd.<span class="blurred">StudentID</span>,
+    sd.<span class="blurred">FirstName</span>,
+    sd.<span class="blurred">LastName</span>,
+    sd.<span class="blurred">Email</span>,
+    sd.<span class="blurred">PhoneNumber</span>,
+    sd.<span class="blurred">DegreeProgram</span>,
+    sd.<span class="blurred">Major</span>,
+    sd.<span class="blurred">Minor</span>,
+    sp.<span class="blurred">CoursesCompleted</span>,
+    sp.<span class="blurred">TotalCredits</span>,
+    sp.<span class="blurred">CalculatedGPA</span>,
+    sp.<span class="blurred">LastActiveYear</span>,
+    sp.<span class="blurred">FailedCourses</span>,
+    sp.<span class="blurred">WithdrawnCourses</span>,
+    ap.<span class="blurred">AcademicStanding</span>,
+    ap.<span class="blurred">RiskStatus</span>,
+    COALESCE(SUM(fa.<span class="blurred">Amount</span>), 0) as <span class="blurred">TotalFinancialAid</span>,
+    COUNT(DISTINCT fa.<span class="blurred">AidType</span>) as <span class="blurred">AidTypesReceived</span>,
+    CASE 
+        WHEN sp.<span class="blurred">TotalCredits</span> >= gr.<span class="blurred">RequiredCredits</span> 
+             AND sp.<span class="blurred">CalculatedGPA</span> >= gr.<span class="blurred">RequiredGPA</span>
+        THEN 'Eligible for Graduation'
+        WHEN sp.<span class="blurred">TotalCredits</span> >= (gr.<span class="blurred">RequiredCredits</span> * 0.8)
+        THEN 'Near Graduation'
+        WHEN sp.<span class="blurred">TotalCredits</span> >= (gr.<span class="blurred">RequiredCredits</span> * 0.5)
+        THEN 'Halfway Complete'
+        ELSE 'In Progress'
+    END as <span class="blurred">GraduationStatus</span>
+FROM <span class="blurred">_StudentData</span> sd
+LEFT JOIN <span class="blurred">_StudentProgress</span> sp ON sd.<span class="blurred">StudentID</span> = sp.<span class="blurred">StudentID</span>
+LEFT JOIN <span class="blurred">_AcademicPerformance</span> ap ON sd.<span class="blurred">StudentID</span> = ap.<span class="blurred">StudentID</span>
+LEFT JOIN <span class="blurred">_FinancialAid</span> fa ON sd.<span class="blurred">StudentID</span> = fa.<span class="blurred">StudentID</span>
+LEFT JOIN <span class="blurred">_GraduationRequirements</span> gr ON sd.<span class="blurred">DegreeProgram</span> = gr.<span class="blurred">ProgramID</span>
+WHERE sd.<span class="blurred">Status</span> = 'Active'
+    AND sp.<span class="blurred">LastActiveYear</span> >= YEAR(GETDATE()) - 2
+    AND sd.<span class="blurred">EnrollmentDate</span> >= '2020-01-01'
+ORDER BY 
+    sp.<span class="blurred">CalculatedGPA</span> DESC, 
+    sp.<span class="blurred">TotalCredits</span> DESC;</pre>
+                </div>
+                <div class="modal-highlights">
+                    <h3>Debugging Achievements</h3>
+                    <ul>
+                        <li><strong>Performance Optimization:</strong> Reduced query execution time from 45 seconds to
+                            2.3 seconds (95% improvement)</li>
+                        <li><strong>Query Restructuring:</strong> Rewrote complex subqueries as CTEs for better
+                            readability and performance</li>
+                        <li><strong>Memory Optimization:</strong> Reduced memory usage by 60% through efficient join
+                            strategies</li>
+                        <li><strong>Code Maintainability:</strong> Added detailed comments and modular structure for
+                            future maintenance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <article id="footer" class="wrapper style4">
@@ -800,111 +982,7 @@
         </div>
     </article>
 
-    <!-- Modal for Complex Data Extraction -->
-    <div id="complex-data-extraction" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>Complex Data Extraction</h2>
-                <span class="close" onclick="closeModal('complex-data-extraction')">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="modal-description">
-                    <p>This project involved developing complex SQL queries for extracting data from multiple related
-                        tables in a PostgreSQL database. The solution optimized query performance by 50% through
-                        strategic indexing and query restructuring.</p>
-                </div>
-                <div class="sql-code">
-                    <pre>-- Complex multi-table join with subqueries
-SELECT 
-    c.customer_id,
-    c.customer_name,
-    o.order_date,
-    o.total_amount,
-    p.product_name,
-    p.category
-FROM customers c
-JOIN orders o ON c.customer_id = o.customer_id
-JOIN order_items oi ON o.order_id = oi.order_id
-JOIN products p ON oi.product_id = p.product_id
-WHERE o.order_date >= '2023-01-01'
-    AND c.customer_id IN (
-        SELECT customer_id 
-        FROM orders 
-        WHERE total_amount > (
-            SELECT AVG(total_amount) 
-            FROM orders
-        )
-    )
-ORDER BY o.order_date DESC;</pre>
-                </div>
-                <div class="modal-highlights">
-                    <h3>Key Achievements</h3>
-                    <ul>
-                        <li><strong>Performance Optimization:</strong> Reduced query execution time by 50% through
-                            strategic indexing</li>
-                        <li><strong>Complex Joins:</strong> Successfully implemented 4-table joins with subqueries</li>
-                        <li><strong>Data Integrity:</strong> Ensured referential integrity across multiple tables</li>
-                        <li><strong>Scalability:</strong> Designed queries to handle growing data volumes efficiently
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <!-- Modal for ETL Pipeline -->
-    <div id="etl-pipeline" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>ETL Pipeline Development</h2>
-                <span class="close" onclick="closeModal('etl-pipeline')">&times;</span>
-            </div>
-            <div class="modal-body">
-                <div class="modal-description">
-                    <p>Developed a comprehensive ETL pipeline using SQL Server Integration Services (SSIS) to process
-                        over 1 million records daily. The pipeline includes data validation, transformation, and loading
-                        processes with automated error handling.</p>
-                </div>
-                <div class="sql-code">
-                    <pre>-- ETL Stored Procedure for Data Processing
-CREATE PROCEDURE sp_ProcessDailyData
-AS
-BEGIN
-    SET NOCOUNT ON;
-    
-    -- Data validation and cleaning
-    UPDATE staging_table 
-    SET email = LOWER(TRIM(email))
-    WHERE email IS NOT NULL;
-    
-    -- Transform and load data
-    INSERT INTO fact_sales (customer_id, product_id, sale_date, amount)
-    SELECT 
-        c.customer_id,
-        p.product_id,
-        s.sale_date,
-        s.amount
-    FROM staging_sales s
-    JOIN dim_customers c ON s.customer_email = c.email
-    JOIN dim_products p ON s.product_sku = p.sku
-    WHERE s.sale_date >= DATEADD(day, -1, GETDATE());
-    
-    -- Update statistics
-    UPDATE STATISTICS fact_sales;
-END;</pre>
-                </div>
-                <div class="modal-highlights">
-                    <h3>Pipeline Features</h3>
-                    <ul>
-                        <li><strong>High Volume Processing:</strong> Handles 1M+ records daily with 99.9% uptime</li>
-                        <li><strong>Data Quality:</strong> Automated validation and cleaning processes</li>
-                        <li><strong>Error Handling:</strong> Comprehensive logging and error recovery mechanisms</li>
-                        <li><strong>Performance:</strong> Optimized for speed with parallel processing capabilities</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <!-- Modal for Analytics Dashboard -->
     <div id="analytics-dashboard" class="modal">
@@ -921,35 +999,35 @@ END;</pre>
                 </div>
                 <div class="sql-code">
                     <pre>-- Real-time analytics query for dashboard
-WITH user_metrics AS (
+WITH <span class="blurred">user_metrics</span> AS (
     SELECT 
-        DATE(created_at) as date,
+        DATE(<span class="blurred">registration_date</span>) as date,
         COUNT(*) as total_users,
-        COUNT(CASE WHEN status = 'active' THEN 1 END) as active_users
-    FROM users
-    WHERE created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)
-    GROUP BY DATE(created_at)
+        COUNT(CASE WHEN <span class="blurred">account_status</span> = 'active' THEN 1 END) as active_users
+    FROM <span class="blurred">user_accounts</span>
+    WHERE <span class="blurred">registration_date</span> >= DATE_SUB(NOW(), INTERVAL 30 DAY)
+    GROUP BY DATE(<span class="blurred">registration_date</span>)
 ),
-daily_performance AS (
+<span class="blurred">daily_performance</span> AS (
     SELECT 
-        DATE(order_date) as date,
-        COUNT(*) as orders,
-        SUM(total_amount) as revenue,
-        AVG(total_amount) as avg_order_value
-    FROM orders
-    WHERE order_date >= DATE_SUB(NOW(), INTERVAL 7 DAY)
-    GROUP BY DATE(order_date)
+        DATE(<span class="blurred">transaction_date</span>) as date,
+        COUNT(*) as transactions,
+        SUM(<span class="blurred">total_amount</span>) as revenue,
+        AVG(<span class="blurred">total_amount</span>) as avg_transaction_value
+    FROM <span class="blurred">transactions</span>
+    WHERE <span class="blurred">transaction_date</span> >= DATE_SUB(NOW(), INTERVAL 7 DAY)
+    GROUP BY DATE(<span class="blurred">transaction_date</span>)
 )
 SELECT 
     um.date,
     um.total_users,
     um.active_users,
-    dp.orders,
+    dp.transactions,
     dp.revenue,
-    dp.avg_order_value,
+    dp.avg_transaction_value,
     ROUND((um.active_users / um.total_users) * 100, 2) as activation_rate
-FROM user_metrics um
-LEFT JOIN daily_performance dp ON um.date = dp.date
+FROM <span class="blurred">user_metrics</span> um
+LEFT JOIN <span class="blurred">daily_performance</span> dp ON um.date = dp.date
 ORDER BY um.date DESC;</pre>
                 </div>
                 <div class="modal-highlights">
@@ -980,34 +1058,34 @@ ORDER BY um.date DESC;</pre>
                 </div>
                 <div class="sql-code">
                     <pre>-- Security implementation with role-based access
-CREATE OR REPLACE PROCEDURE secure_data_access(
-    p_user_id IN VARCHAR2,
-    p_table_name IN VARCHAR2,
-    p_operation IN VARCHAR2
+CREATE OR REPLACE PROCEDURE <span class="blurred">secure_data_access</span>(
+    p_<span class="blurred">account_id</span> IN VARCHAR2,
+    p_<span class="blurred">resource_name</span> IN VARCHAR2,
+    p_<span class="blurred">action</span> IN VARCHAR2
 ) AS
-    v_user_role VARCHAR2(50);
-    v_has_access BOOLEAN := FALSE;
+    v_<span class="blurred">account_role</span> VARCHAR2(50);
+    v_<span class="blurred">has_access</span> BOOLEAN := FALSE;
 BEGIN
-    -- Get user role
-    SELECT role_name INTO v_user_role
-    FROM user_roles 
-    WHERE user_id = p_user_id;
+    -- Get account role
+    SELECT <span class="blurred">role_name</span> INTO v_<span class="blurred">account_role</span>
+    FROM <span class="blurred">account_roles</span> 
+    WHERE <span class="blurred">account_id</span> = p_<span class="blurred">account_id</span>;
     
     -- Check access permissions
-    SELECT COUNT(*) INTO v_has_access
-    FROM role_permissions rp
-    JOIN table_permissions tp ON rp.permission_id = tp.permission_id
-    WHERE rp.role_name = v_user_role
-        AND tp.table_name = p_table_name
-        AND tp.operation = p_operation;
+    SELECT COUNT(*) INTO v_<span class="blurred">has_access</span>
+    FROM <span class="blurred">role_permissions</span> rp
+    JOIN <span class="blurred">resource_permissions</span> rp2 ON rp.<span class="blurred">permission_id</span> = rp2.<span class="blurred">permission_id</span>
+    WHERE rp.<span class="blurred">role_name</span> = v_<span class="blurred">account_role</span>
+        AND rp2.<span class="blurred">resource_name</span> = p_<span class="blurred">resource_name</span>
+        AND rp2.<span class="blurred">action</span> = p_<span class="blurred">action</span>;
     
-    IF v_has_access = 0 THEN
+    IF v_<span class="blurred">has_access</span> = 0 THEN
         RAISE_APPLICATION_ERROR(-20001, 'Access denied: Insufficient permissions');
     END IF;
     
     -- Log access attempt
-    INSERT INTO access_log (user_id, table_name, operation, access_time)
-    VALUES (p_user_id, p_table_name, p_operation, SYSDATE);
+    INSERT INTO <span class="blurred">access_log</span> (<span class="blurred">account_id</span>, <span class="blurred">resource_name</span>, <span class="blurred">action</span>, <span class="blurred">access_time</span>)
+    VALUES (p_<span class="blurred">account_id</span>, p_<span class="blurred">resource_name</span>, p_<span class="blurred">action</span>, SYSDATE);
     
     COMMIT;
 END;</pre>
@@ -1047,28 +1125,28 @@ END;</pre>
 -- After: 0.6 seconds execution time
 
 -- Create composite index for frequently queried columns
-CREATE INDEX idx_orders_customer_date 
-ON orders (customer_id, order_date, status);
+CREATE INDEX <span class="blurred">idx_transactions_client_date</span> 
+ON <span class="blurred">transactions</span> (<span class="blurred">client_id</span>, <span class="blurred">transaction_date</span>, <span class="blurred">status</span>);
 
 -- Optimize query with proper index usage
 SELECT 
-    o.order_id,
-    o.order_date,
-    o.total_amount,
-    c.customer_name,
-    p.product_name
-FROM orders o
-INNER JOIN customers c ON o.customer_id = c.customer_id
-INNER JOIN order_items oi ON o.order_id = oi.order_id
-INNER JOIN products p ON oi.product_id = p.product_id
-WHERE o.order_date >= '2023-01-01'
-    AND o.status = 'completed'
-    AND c.customer_id IN (
-        SELECT customer_id 
-        FROM orders 
-        WHERE total_amount > 1000
+    t.<span class="blurred">transaction_id</span>,
+    t.<span class="blurred">transaction_date</span>,
+    t.<span class="blurred">total_amount</span>,
+    c.<span class="blurred">client_name</span>,
+    p.<span class="blurred">item_name</span>
+FROM <span class="blurred">transactions</span> t
+INNER JOIN <span class="blurred">clients</span> c ON t.<span class="blurred">client_id</span> = c.<span class="blurred">client_id</span>
+INNER JOIN <span class="blurred">transaction_items</span> ti ON t.<span class="blurred">transaction_id</span> = ti.<span class="blurred">transaction_id</span>
+INNER JOIN <span class="blurred">items</span> p ON ti.<span class="blurred">item_id</span> = p.<span class="blurred">item_id</span>
+WHERE t.<span class="blurred">transaction_date</span> >= '2023-01-01'
+    AND t.<span class="blurred">status</span> = 'completed'
+    AND c.<span class="blurred">client_id</span> IN (
+        SELECT <span class="blurred">client_id</span> 
+        FROM <span class="blurred">transactions</span> 
+        WHERE <span class="blurred">total_amount</span> > 1000
     )
-ORDER BY o.order_date DESC
+ORDER BY t.<span class="blurred">transaction_date</span> DESC
 LIMIT 1000;</pre>
                 </div>
                 <div class="modal-highlights">
@@ -1103,56 +1181,56 @@ LIMIT 1000;</pre>
                 <div class="sql-code">
                     <pre>-- Data Warehouse ETL Process
 -- Fact table creation with proper indexing
-CREATE TABLE fact_sales (
-    sales_key INT IDENTITY(1,1) PRIMARY KEY,
-    customer_key INT NOT NULL,
-    product_key INT NOT NULL,
-    date_key INT NOT NULL,
-    sales_amount DECIMAL(18,2),
-    quantity INT,
-    discount_amount DECIMAL(18,2),
-    FOREIGN KEY (customer_key) REFERENCES dim_customers(customer_key),
-    FOREIGN KEY (product_key) REFERENCES dim_products(product_key),
-    FOREIGN KEY (date_key) REFERENCES dim_date(date_key)
+CREATE TABLE <span class="blurred">fact_transactions</span> (
+    <span class="blurred">transaction_key</span> INT IDENTITY(1,1) PRIMARY KEY,
+    <span class="blurred">client_key</span> INT NOT NULL,
+    <span class="blurred">item_key</span> INT NOT NULL,
+    <span class="blurred">date_key</span> INT NOT NULL,
+    <span class="blurred">transaction_amount</span> DECIMAL(18,2),
+    <span class="blurred">quantity</span> INT,
+    <span class="blurred">discount_amount</span> DECIMAL(18,2),
+    FOREIGN KEY (<span class="blurred">client_key</span>) REFERENCES <span class="blurred">dim_clients</span>(<span class="blurred">client_key</span>),
+    FOREIGN KEY (<span class="blurred">item_key</span>) REFERENCES <span class="blurred">dim_items</span>(<span class="blurred">item_key</span>),
+    FOREIGN KEY (<span class="blurred">date_key</span>) REFERENCES <span class="blurred">dim_date</span>(<span class="blurred">date_key</span>)
 );
 
 -- ETL stored procedure for data loading
-CREATE PROCEDURE sp_LoadSalesData
+CREATE PROCEDURE <span class="blurred">sp_LoadTransactionData</span>
 AS
 BEGIN
     SET NOCOUNT ON;
     
     -- Truncate staging table
-    TRUNCATE TABLE staging_sales;
+    TRUNCATE TABLE <span class="blurred">staging_transactions</span>;
     
     -- Load data from source systems
-    INSERT INTO staging_sales (customer_id, product_id, sale_date, amount, quantity)
+    INSERT INTO <span class="blurred">staging_transactions</span> (<span class="blurred">client_id</span>, <span class="blurred">item_id</span>, <span class="blurred">transaction_date</span>, <span class="blurred">amount</span>, <span class="blurred">quantity</span>)
     SELECT 
-        c.customer_id,
-        p.product_id,
-        s.sale_date,
-        s.amount,
-        s.quantity
-    FROM source_sales s
-    INNER JOIN source_customers c ON s.customer_id = c.customer_id
-    INNER JOIN source_products p ON s.product_id = p.product_id
-    WHERE s.sale_date >= DATEADD(day, -1, GETDATE());
+        c.<span class="blurred">client_id</span>,
+        p.<span class="blurred">item_id</span>,
+        s.<span class="blurred">transaction_date</span>,
+        s.<span class="blurred">amount</span>,
+        s.<span class="blurred">quantity</span>
+    FROM <span class="blurred">source_transactions</span> s
+    INNER JOIN <span class="blurred">source_clients</span> c ON s.<span class="blurred">client_id</span> = c.<span class="blurred">client_id</span>
+    INNER JOIN <span class="blurred">source_items</span> p ON s.<span class="blurred">item_id</span> = p.<span class="blurred">item_id</span>
+    WHERE s.<span class="blurred">transaction_date</span> >= DATEADD(day, -1, GETDATE());
     
     -- Transform and load into fact table
-    INSERT INTO fact_sales (customer_key, product_key, date_key, sales_amount, quantity)
+    INSERT INTO <span class="blurred">fact_transactions</span> (<span class="blurred">client_key</span>, <span class="blurred">item_key</span>, <span class="blurred">date_key</span>, <span class="blurred">transaction_amount</span>, <span class="blurred">quantity</span>)
     SELECT 
-        dc.customer_key,
-        dp.product_key,
-        dd.date_key,
-        ss.amount,
-        ss.quantity
-    FROM staging_sales ss
-    INNER JOIN dim_customers dc ON ss.customer_id = dc.customer_id
-    INNER JOIN dim_products dp ON ss.product_id = dp.product_id
-    INNER JOIN dim_date dd ON ss.sale_date = dd.full_date;
+        dc.<span class="blurred">client_key</span>,
+        di.<span class="blurred">item_key</span>,
+        dd.<span class="blurred">date_key</span>,
+        st.<span class="blurred">amount</span>,
+        st.<span class="blurred">quantity</span>
+    FROM <span class="blurred">staging_transactions</span> st
+    INNER JOIN <span class="blurred">dim_clients</span> dc ON st.<span class="blurred">client_id</span> = dc.<span class="blurred">client_id</span>
+    INNER JOIN <span class="blurred">dim_items</span> di ON st.<span class="blurred">item_id</span> = di.<span class="blurred">item_id</span>
+    INNER JOIN <span class="blurred">dim_date</span> dd ON st.<span class="blurred">transaction_date</span> = dd.<span class="blurred">full_date</span>;
     
     -- Update statistics
-    UPDATE STATISTICS fact_sales;
+    UPDATE STATISTICS <span class="blurred">fact_transactions</span>;
 END;</pre>
                 </div>
                 <div class="modal-highlights">
@@ -1186,62 +1264,62 @@ END;</pre>
                 </div>
                 <div class="sql-code">
                     <pre>WITH
-_Grad
+<span class="blurred">_Grad</span>
 AS
 (
-SELECT d.PersonID
-      ,sem.AcademicReportingYear
-   ,'20'+LEFT(sem.AcademicReportingYear, 2) + '-' + '20'+RIGHT(sem.AcademicReportingYear,2) AS DisplayAcademicYear
-      ,sem.Year
-      ,sem.SemesterOrderRelativeToCurrent
-      ,sem.TermCode
-      ,m.College
-      ,m.Department
-      ,m.MajorName
-FROM dbo.Degree AS d
-INNER JOIN dbo.Semester AS sem ON sem.SemesterID = d.DegreeGrantSemesterID
-INNER JOIN dbo.Major AS m ON m.MajorID = d.Major1ID
-WHERE d.Subprogram = 'Day School (DAY)'
-  AND d.IsBYUIDegree = 1
-  AND m.Level = 'B'
-  AND sem.Session <> 'Summer Session'
+SELECT d.<span class="blurred">ParticipantID</span>
+      ,sem.<span class="blurred">AcademicYear</span>
+   ,'20'+LEFT(sem.<span class="blurred">AcademicYear</span>, 2) + '-' + '20'+RIGHT(sem.<span class="blurred">AcademicYear</span>,2) AS <span class="blurred">DisplayAcademicYear</span>
+      ,sem.<span class="blurred">Year</span>
+      ,sem.<span class="blurred">SemesterOrder</span>
+      ,sem.<span class="blurred">TermCode</span>
+      ,m.<span class="blurred">College</span>
+      ,m.<span class="blurred">Department</span>
+      ,m.<span class="blurred">MajorName</span>
+FROM dbo.<span class="blurred">ParticipantDegree</span> AS d
+INNER JOIN dbo.<span class="blurred">AcademicSemester</span> AS sem ON sem.<span class="blurred">SemesterID</span> = d.<span class="blurred">DegreeSemesterID</span>
+INNER JOIN dbo.<span class="blurred">AcademicMajor</span> AS m ON m.<span class="blurred">MajorID</span> = d.<span class="blurred">MajorID</span>
+WHERE d.<span class="blurred">ProgramType</span> = 'Day School (DAY)'
+  AND d.<span class="blurred">IsUniversityDegree</span> = 1
+  AND m.<span class="blurred">Level</span> = 'B'
+  AND sem.<span class="blurred">Session</span> <> 'Summer Session'
 )
 ,
-_SurveyResponse
+<span class="blurred">_SurveyResponse</span>
 AS
 (
-SELECT sqr.PersonID
-      ,sr.Cohort
-FROM dbo.factSurveyQuestionResponse AS sqr
-INNER JOIN dbo.dimSurveyQuestion AS sq ON sqr.dimSurveyQuestionID = sq.dimSurveyQuestionID
-INNER JOIN dbo.dimSurveyResponseInfo AS sr ON sqr.dimSurveyResponseInfoID = sr.dimSurveyResponseInfoID
-WHERE sr.Cohort IN ('5 Year', '120 Days', '1 Year', 'Graduation')
-GROUP BY sqr.PersonID
-        ,sr.Cohort
+SELECT sqr.<span class="blurred">ParticipantID</span>
+      ,sr.<span class="blurred">Cohort</span>
+FROM dbo.<span class="blurred">factSurveyResponse</span> AS sqr
+INNER JOIN dbo.<span class="blurred">dimSurveyQuestion</span> AS sq ON sqr.<span class="blurred">QuestionID</span> = sq.<span class="blurred">QuestionID</span>
+INNER JOIN dbo.<span class="blurred">dimSurveyInfo</span> AS sr ON sqr.<span class="blurred">ResponseInfoID</span> = sr.<span class="blurred">ResponseInfoID</span>
+WHERE sr.<span class="blurred">Cohort</span> IN ('5 Year', '120 Days', '1 Year', 'Graduation')
+GROUP BY sqr.<span class="blurred">ParticipantID</span>
+        ,sr.<span class="blurred">Cohort</span>
 )
-SELECT g.AcademicReportingYear
-   ,g.DisplayAcademicYear
-      ,g.Year
-      ,g.SemesterOrderRelativeToCurrent
-      ,g.TermCode
-      ,g.College
-      ,g.Department
-      ,g.MajorName
-      ,count (DISTINCT (CASE WHEN s.Cohort = '5 Year' THEN g.PersonID ELSE NULL END)) '5 Year Cohort'
-      ,count (DISTINCT (CASE WHEN s.Cohort = '120 Days' OR s.Cohort = 'Graduation' THEN g.PersonID ELSE NULL END)) '120 Days Cohort'
-      ,count (DISTINCT (CASE WHEN s.Cohort = '1 Year' THEN g.PersonID ELSE NULL END)) '1 Year Cohort'
-      ,count (DISTINCT (CASE WHEN s.Cohort = 'Graduation' THEN g.PersonID ELSE NULL END)) 'Graduation Cohort'
-      ,count (DISTINCT g.PersonID) Denominator
-FROM _Grad AS g
-LEFT OUTER JOIN _SurveyResponse AS s ON s.PersonID = g.PersonID
-GROUP BY g.AcademicReportingYear
-  ,g.DisplayAcademicYear
-        ,g.Year
-        ,g.SemesterOrderRelativeToCurrent
-        ,g.TermCode
-        ,g.College
-        ,g.Department
-        ,g.MajorName;</pre>
+SELECT g.<span class="blurred">AcademicYear</span>
+   ,g.<span class="blurred">DisplayAcademicYear</span>
+      ,g.<span class="blurred">Year</span>
+      ,g.<span class="blurred">SemesterOrder</span>
+      ,g.<span class="blurred">TermCode</span>
+      ,g.<span class="blurred">College</span>
+      ,g.<span class="blurred">Department</span>
+      ,g.<span class="blurred">MajorName</span>
+      ,count (DISTINCT (CASE WHEN s.<span class="blurred">Cohort</span> = '5 Year' THEN g.<span class="blurred">ParticipantID</span> ELSE NULL END)) '5 Year Cohort'
+      ,count (DISTINCT (CASE WHEN s.<span class="blurred">Cohort</span> = '120 Days' OR s.<span class="blurred">Cohort</span> = 'Graduation' THEN g.<span class="blurred">ParticipantID</span> ELSE NULL END)) '120 Days Cohort'
+      ,count (DISTINCT (CASE WHEN s.<span class="blurred">Cohort</span> = '1 Year' THEN g.<span class="blurred">ParticipantID</span> ELSE NULL END)) '1 Year Cohort'
+      ,count (DISTINCT (CASE WHEN s.<span class="blurred">Cohort</span> = 'Graduation' THEN g.<span class="blurred">ParticipantID</span> ELSE NULL END)) 'Graduation Cohort'
+      ,count (DISTINCT g.<span class="blurred">ParticipantID</span>) Denominator
+FROM <span class="blurred">_Grad</span> AS g
+LEFT OUTER JOIN <span class="blurred">_SurveyResponse</span> AS s ON s.<span class="blurred">ParticipantID</span> = g.<span class="blurred">ParticipantID</span>
+GROUP BY g.<span class="blurred">AcademicYear</span>
+  ,g.<span class="blurred">DisplayAcademicYear</span>
+        ,g.<span class="blurred">Year</span>
+        ,g.<span class="blurred">SemesterOrder</span>
+        ,g.<span class="blurred">TermCode</span>
+        ,g.<span class="blurred">College</span>
+        ,g.<span class="blurred">Department</span>
+        ,g.<span class="blurred">MajorName</span>;</pre>
                 </div>
                 <div class="modal-highlights">
                     <h3>Query Features</h3>
