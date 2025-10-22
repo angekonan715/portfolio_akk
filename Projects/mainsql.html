@@ -461,6 +461,15 @@
             padding: 2rem;
         }
 
+        .modal-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
         .modal-description {
             font-size: 1rem;
             line-height: 1.6;
@@ -611,7 +620,7 @@
                         <a href="machine-learning.html" class="dropdown-item">Machine Learning</a>
                         <a href="actuarial-science.html" class="dropdown-item">Actuarial Science</a>
                         <a href="r-statistics.html" class="dropdown-item">R & Statistics</a>
-                        <a href="sql.html" class="dropdown-item">SQL</a>
+                        <a href="mainsql.html" class="dropdown-item">SQL</a>
                         <a href="case-studies.html" class="dropdown-item">Case Studies & Hackathon</a>
                         <a href="data-visualization.html" class="dropdown-item">Data Visualization</a>
                     </div>
@@ -717,6 +726,52 @@
                         </a>
                     </section>
                 </div>
+                <div class="col-6 col-12-medium">
+                    <section class="box style2">
+                        <a href="#" onclick="openModal('database-optimization')">
+                            <span class="icon featured">
+                                <img src="../images/icons/exploratoryanalysisicon.png" alt="Database Optimization" />
+                            </span>
+                            <h3>Database Performance Optimization</h3>
+                            <p><strong>Technology:</strong> MySQL, Indexing<br>
+                                <strong>Features:</strong> Query optimization, Indexing strategies<br>
+                                <strong>Performance:</strong> 75% faster queries<br>
+                                <strong>Duration:</strong> 3 weeks
+                            </p>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <section class="box style2">
+                        <a href="#" onclick="openModal('data-warehouse')">
+                            <span class="icon solid featured">
+                                <img src="../images/icons/exploratoryanalysisicon.png" alt="Data Warehouse" />
+                            </span>
+                            <h3>Data Warehouse Design</h3>
+                            <p><strong>Technology:</strong> SQL Server, SSAS<br>
+                                <strong>Features:</strong> Star schema, ETL processes<br>
+                                <strong>Volume:</strong> 10TB+ data warehouse<br>
+                                <strong>Duration:</strong> 8 weeks
+                            </p>
+                        </a>
+                    </section>
+                </div>
+                <div class="col-6 col-12-medium">
+                    <section class="box style2">
+                        <a href="#" onclick="openModal('graduation-survey-analysis')">
+                            <span class="icon featured">
+                                <img src="../images/icons/exploratoryanalysisicon.png"
+                                    alt="Graduation Survey Analysis" />
+                            </span>
+                            <h3>Graduation Survey Analysis</h3>
+                            <p><strong>Technology:</strong> SQL Server, CTEs<br>
+                                <strong>Features:</strong> Complex joins, Cohort analysis<br>
+                                <strong>Data Source:</strong> Student survey responses<br>
+                                <strong>Duration:</strong> 2 weeks
+                            </p>
+                        </a>
+                    </section>
+                </div>
             </div>
             <footer>
                 <a href="../mywork.html" class="button large scrolly">← Back to Categories</a>
@@ -728,7 +783,7 @@
     <article id="footer" class="wrapper style4">
         <div class="container medium">
             <header>
-                <h2>Thank you for exploring my SQL work!</h2>
+                <h2>Thank you for exploring my SQL projects!</h2>
                 <p>I'm always open to new opportunities and collaborations.</p>
             </header>
             <div class="row">
@@ -967,6 +1022,241 @@ END;</pre>
                         <li><strong>Audit Logging:</strong> Comprehensive tracking of all data access and modifications
                         </li>
                         <li><strong>Compliance:</strong> Full GDPR and SOX compliance with automated reporting</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Database Optimization -->
+    <div id="database-optimization" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Database Performance Optimization</h2>
+                <span class="close" onclick="closeModal('database-optimization')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">
+                    <p>Optimized database performance for a high-traffic e-commerce platform, achieving 75% faster query
+                        execution times through strategic indexing, query rewriting, and database configuration tuning.
+                    </p>
+                </div>
+                <div class="sql-code">
+                    <pre>-- Performance optimization with strategic indexing
+-- Before: 2.5 seconds execution time
+-- After: 0.6 seconds execution time
+
+-- Create composite index for frequently queried columns
+CREATE INDEX idx_orders_customer_date 
+ON orders (customer_id, order_date, status);
+
+-- Optimize query with proper index usage
+SELECT 
+    o.order_id,
+    o.order_date,
+    o.total_amount,
+    c.customer_name,
+    p.product_name
+FROM orders o
+INNER JOIN customers c ON o.customer_id = c.customer_id
+INNER JOIN order_items oi ON o.order_id = oi.order_id
+INNER JOIN products p ON oi.product_id = p.product_id
+WHERE o.order_date >= '2023-01-01'
+    AND o.status = 'completed'
+    AND c.customer_id IN (
+        SELECT customer_id 
+        FROM orders 
+        WHERE total_amount > 1000
+    )
+ORDER BY o.order_date DESC
+LIMIT 1000;</pre>
+                </div>
+                <div class="modal-highlights">
+                    <h3>Optimization Results</h3>
+                    <ul>
+                        <li><strong>Query Performance:</strong> 75% reduction in execution time from 2.5s to 0.6s</li>
+                        <li><strong>Index Strategy:</strong> Created 15 strategic indexes for optimal query performance
+                        </li>
+                        <li><strong>Query Rewriting:</strong> Restructured complex queries for better execution plans
+                        </li>
+                        <li><strong>Database Tuning:</strong> Optimized MySQL configuration for high-traffic workloads
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Data Warehouse -->
+    <div id="data-warehouse" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Data Warehouse Design</h2>
+                <span class="close" onclick="closeModal('data-warehouse')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">
+                    <p>Designed and implemented a comprehensive data warehouse solution using SQL Server and SSAS,
+                        processing over 10TB of data with star schema design and automated ETL processes for business
+                        intelligence reporting.</p>
+                </div>
+                <div class="sql-code">
+                    <pre>-- Data Warehouse ETL Process
+-- Fact table creation with proper indexing
+CREATE TABLE fact_sales (
+    sales_key INT IDENTITY(1,1) PRIMARY KEY,
+    customer_key INT NOT NULL,
+    product_key INT NOT NULL,
+    date_key INT NOT NULL,
+    sales_amount DECIMAL(18,2),
+    quantity INT,
+    discount_amount DECIMAL(18,2),
+    FOREIGN KEY (customer_key) REFERENCES dim_customers(customer_key),
+    FOREIGN KEY (product_key) REFERENCES dim_products(product_key),
+    FOREIGN KEY (date_key) REFERENCES dim_date(date_key)
+);
+
+-- ETL stored procedure for data loading
+CREATE PROCEDURE sp_LoadSalesData
+AS
+BEGIN
+    SET NOCOUNT ON;
+    
+    -- Truncate staging table
+    TRUNCATE TABLE staging_sales;
+    
+    -- Load data from source systems
+    INSERT INTO staging_sales (customer_id, product_id, sale_date, amount, quantity)
+    SELECT 
+        c.customer_id,
+        p.product_id,
+        s.sale_date,
+        s.amount,
+        s.quantity
+    FROM source_sales s
+    INNER JOIN source_customers c ON s.customer_id = c.customer_id
+    INNER JOIN source_products p ON s.product_id = p.product_id
+    WHERE s.sale_date >= DATEADD(day, -1, GETDATE());
+    
+    -- Transform and load into fact table
+    INSERT INTO fact_sales (customer_key, product_key, date_key, sales_amount, quantity)
+    SELECT 
+        dc.customer_key,
+        dp.product_key,
+        dd.date_key,
+        ss.amount,
+        ss.quantity
+    FROM staging_sales ss
+    INNER JOIN dim_customers dc ON ss.customer_id = dc.customer_id
+    INNER JOIN dim_products dp ON ss.product_id = dp.product_id
+    INNER JOIN dim_date dd ON ss.sale_date = dd.full_date;
+    
+    -- Update statistics
+    UPDATE STATISTICS fact_sales;
+END;</pre>
+                </div>
+                <div class="modal-highlights">
+                    <h3>Data Warehouse Features</h3>
+                    <ul>
+                        <li><strong>Star Schema Design:</strong> Implemented optimized star schema for fast analytical
+                            queries</li>
+                        <li><strong>ETL Automation:</strong> Automated data processing pipeline handling 10TB+ of data
+                        </li>
+                        <li><strong>Performance:</strong> Sub-second response times for complex analytical queries</li>
+                        <li><strong>Scalability:</strong> Designed to handle growing data volumes with horizontal
+                            scaling</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Graduation Survey Analysis -->
+    <div id="graduation-survey-analysis" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Graduation Survey Analysis</h2>
+                <span class="close" onclick="closeModal('graduation-survey-analysis')">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description">
+                    <p>Developed a comprehensive SQL query using Common Table Expressions (CTEs) to analyze graduation
+                        survey responses across multiple cohorts. The query joins student degree data with survey
+                        responses to provide insights into student outcomes and engagement patterns.</p>
+                </div>
+                <div class="sql-code">
+                    <pre>WITH
+_Grad
+AS
+(
+SELECT d.PersonID
+      ,sem.AcademicReportingYear
+   ,'20'+LEFT(sem.AcademicReportingYear, 2) + '-' + '20'+RIGHT(sem.AcademicReportingYear,2) AS DisplayAcademicYear
+      ,sem.Year
+      ,sem.SemesterOrderRelativeToCurrent
+      ,sem.TermCode
+      ,m.College
+      ,m.Department
+      ,m.MajorName
+FROM dbo.Degree AS d
+INNER JOIN dbo.Semester AS sem ON sem.SemesterID = d.DegreeGrantSemesterID
+INNER JOIN dbo.Major AS m ON m.MajorID = d.Major1ID
+WHERE d.Subprogram = 'Day School (DAY)'
+  AND d.IsBYUIDegree = 1
+  AND m.Level = 'B'
+  AND sem.Session <> 'Summer Session'
+)
+,
+_SurveyResponse
+AS
+(
+SELECT sqr.PersonID
+      ,sr.Cohort
+FROM dbo.factSurveyQuestionResponse AS sqr
+INNER JOIN dbo.dimSurveyQuestion AS sq ON sqr.dimSurveyQuestionID = sq.dimSurveyQuestionID
+INNER JOIN dbo.dimSurveyResponseInfo AS sr ON sqr.dimSurveyResponseInfoID = sr.dimSurveyResponseInfoID
+WHERE sr.Cohort IN ('5 Year', '120 Days', '1 Year', 'Graduation')
+GROUP BY sqr.PersonID
+        ,sr.Cohort
+)
+SELECT g.AcademicReportingYear
+   ,g.DisplayAcademicYear
+      ,g.Year
+      ,g.SemesterOrderRelativeToCurrent
+      ,g.TermCode
+      ,g.College
+      ,g.Department
+      ,g.MajorName
+      ,count (DISTINCT (CASE WHEN s.Cohort = '5 Year' THEN g.PersonID ELSE NULL END)) '5 Year Cohort'
+      ,count (DISTINCT (CASE WHEN s.Cohort = '120 Days' OR s.Cohort = 'Graduation' THEN g.PersonID ELSE NULL END)) '120 Days Cohort'
+      ,count (DISTINCT (CASE WHEN s.Cohort = '1 Year' THEN g.PersonID ELSE NULL END)) '1 Year Cohort'
+      ,count (DISTINCT (CASE WHEN s.Cohort = 'Graduation' THEN g.PersonID ELSE NULL END)) 'Graduation Cohort'
+      ,count (DISTINCT g.PersonID) Denominator
+FROM _Grad AS g
+LEFT OUTER JOIN _SurveyResponse AS s ON s.PersonID = g.PersonID
+GROUP BY g.AcademicReportingYear
+  ,g.DisplayAcademicYear
+        ,g.Year
+        ,g.SemesterOrderRelativeToCurrent
+        ,g.TermCode
+        ,g.College
+        ,g.Department
+        ,g.MajorName;</pre>
+                </div>
+                <div class="modal-highlights">
+                    <h3>Query Features</h3>
+                    <ul>
+                        <li><strong>Common Table Expressions:</strong> Used CTEs for complex data transformation and
+                            organization</li>
+                        <li><strong>Multi-table Joins:</strong> Integrated degree, semester, major, and survey data</li>
+                        <li><strong>Cohort Analysis:</strong> Analyzed student responses across different time periods
+                            (5 Year, 120 Days, 1 Year, Graduation)</li>
+                        <li><strong>Conditional Aggregation:</strong> Used CASE statements for cohort-specific counting
+                        </li>
+                        <li><strong>Data Filtering:</strong> Applied multiple WHERE conditions for data quality and
+                            relevance</li>
+                        <li><strong>Academic Reporting:</strong> Generated display-friendly academic year formatting
+                        </li>
                     </ul>
                 </div>
             </div>
